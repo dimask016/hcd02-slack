@@ -3,168 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studi Kasus UX: Kolaborasi Tim di Slack</title>
+    <title>Laporan Komprehensif UX Slack - Kerangka Garrett</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Chosen Palette: Warm Neutral with Indigo Accents (Calm Harmony) -->
-    <!-- Application Structure Plan: A dashboard-style layout with side navigation. This structure allows the user to logically step through the UX research phases (Overview -> Strategy Analysis -> User Persona) without losing context. It acts as an interactive presentation deck replacing a static PDF/PPT, fulfilling the assignment output requirement while enhancing engagement. -->
+    <!-- Chosen Palette: Slate & Indigo (Professional Harmony) -->
+    <!-- Application Structure Plan: Sidebar Navigation dengan 4 pilar utama: Ikhtisar, Strategi, Persona, dan Solusi. Struktur ini dirancang untuk memandu pembaca (dosen/tim) melalui proses HCD secara linear namun fleksibel, memastikan setiap pain point terjawab oleh solusi strategis di akhir. -->
     <!-- Visualization & Content Choices: 
-         1. Overview: Card layouts for Problems and Challenges -> Goal: Inform -> Method: Styled HTML blocks -> Justification: Clear separation of context.
-         2. Strategy Analysis: Radar Chart (Current vs Ideal State) -> Goal: Compare -> Method: Chart.js -> Interaction: Hover tooltips -> Justification: Visually demonstrates the 'gap' between the current painful experience and the target goal, NO SVG used.
-         3. Persona: Interactive Tabbed Profile -> Goal: Organize/Inform -> Method: HTML/JS Toggle -> Interaction: Click tabs to reveal different persona traits -> Justification: Keeps interface clean while providing deep qualitative data. -->
+         1. Problem & Challenge Grid: Visualisasi cepat hambatan utama.
+         2. Strategy Radar Chart: Membandingkan kondisi saat ini vs target strategis.
+         3. Interactive Persona Card: Pendalaman kualitatif pengguna 'Raditya'.
+         4. Solution Matrix: Pemetaan konkret fitur terhadap masalah utama untuk efisiensi komunikasi. -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #fafaf9; color: #1c1917; }
-        .chart-container { position: relative; width: 100%; max-width: 600px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
-        .nav-active { background-color: #e0e7ff; color: #4338ca; border-right: 4px solid #4338ca; font-weight: 600; }
-        .tab-active { border-bottom: 2px solid #4338ca; color: #4338ca; font-weight: 600; }
-        .fade-in { animation: fadeIn 0.4s ease-in-out; }
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; color: #1e293b; }
+        .chart-container { position: relative; width: 100%; max-width: 500px; margin: auto; height: 320px; }
+        .nav-active { background-color: #eef2ff; color: #4f46e5; border-right: 4px solid #4f46e5; font-weight: 600; }
+        .fade-in { animation: fadeIn 0.4s ease-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .persona-tab-active { border-bottom: 2px solid #4f46e5; color: #4f46e5; }
     </style>
 </head>
 <body class="flex flex-col md:flex-row min-h-screen">
 
-    <nav class="w-full md:w-64 bg-white border-b md:border-r border-stone-200 flex-shrink-0 z-10 sticky top-0 md:h-screen overflow-y-auto">
-        <div class="p-6">
-            <h1 class="text-2xl font-bold text-indigo-700 tracking-tight">UX Report</h1>
-            <p class="text-xs text-stone-500 mt-1 uppercase tracking-wider font-semibold">Tugas Studi Kasus: Slack</p>
+    <!-- Sidebar Navigation -->
+    <nav class="w-full md:w-72 bg-white border-b md:border-r border-slate-200 flex-shrink-0 z-20 sticky top-0 md:h-screen overflow-y-auto">
+        <div class="p-8">
+            <h1 class="text-xl font-bold text-slate-900 tracking-tight">UX <span class="text-indigo-600">Report</span></h1>
+            <p class="text-[10px] text-slate-500 mt-1 uppercase tracking-[0.2em] font-bold">UCD & Kerangka Garrett</p>
         </div>
-        <ul class="flex flex-row md:flex-col overflow-x-auto md:overflow-hidden whitespace-nowrap md:whitespace-normal pb-2 md:pb-0 px-4 md:px-0">
-            <li><button onclick="nav('overview')" id="nav-overview" class="w-full text-left px-6 py-4 hover:bg-stone-50 transition-colors nav-active">📋 Ikhtisar Kasus</button></li>
-            <li><button onclick="nav('strategy')" id="nav-strategy" class="w-full text-left px-6 py-4 hover:bg-stone-50 transition-colors text-stone-600">🎯 Elemen Strategi</button></li>
-            <li><button onclick="nav('persona')" id="nav-persona" class="w-full text-left px-6 py-4 hover:bg-stone-50 transition-colors text-stone-600">👤 Persona Pengguna</button></li>
+        <ul class="flex flex-row md:flex-col overflow-x-auto md:overflow-hidden px-4 md:px-0 scrollbar-hide">
+            <li><button onclick="nav('overview')" id="nav-overview" class="w-full text-left px-8 py-4 hover:bg-slate-50 transition-all nav-active">📋 Ikhtisar Kasus</button></li>
+            <li><button onclick="nav('strategy')" id="nav-strategy" class="w-full text-left px-8 py-4 hover:bg-slate-50 transition-all text-slate-600">🎯 Strategy Layer</button></li>
+            <li><button onclick="nav('persona')" id="nav-persona" class="w-full text-left px-8 py-4 hover:bg-slate-50 transition-all text-slate-600">👤 Persona Pengguna</button></li>
+            <li><button onclick="nav('solutions')" id="nav-solutions" class="w-full text-left px-8 py-4 hover:bg-slate-50 transition-all text-slate-600">💡 Solusi Desain</button></li>
         </ul>
+        <div class="hidden md:block absolute bottom-8 left-8 right-8">
+            <div class="p-4 bg-slate-50 rounded-lg border border-slate-100">
+                <p class="text-[10px] text-slate-400 font-bold uppercase mb-1">Studi Kasus</p>
+                <p class="text-xs font-semibold text-slate-700">Kolaborasi Tim di Slack</p>
+            </div>
+        </div>
     </nav>
 
-    <main class="flex-1 p-6 md:p-12 overflow-y-auto w-full max-w-6xl mx-auto">
+    <!-- Main Content Area -->
+    <main class="flex-1 p-6 md:p-16 overflow-y-auto">
         
+        <!-- SECTION: OVERVIEW -->
         <section id="sec-overview" class="block fade-in">
-            <div class="mb-10">
-                <h2 class="text-3xl font-bold mb-4">Ikhtisar Studi Kasus</h2>
-                <p class="text-stone-600 text-lg leading-relaxed">
-                    Bagian ini memaparkan konteks dasar dari permasalahan yang dihadapi pengguna saat menggunakan platform kolaborasi Slack, serta tantangan desain yang harus diselesaikan. Mengacu pada Kerangka Elemen Pengalaman Pengguna (Jesse James Garrett), pemahaman ini merupakan pondasi sebelum melangkah ke tahap Strategi.
+            <header class="mb-12">
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-4">Identifikasi Permasalahan</h2>
+                <p class="text-slate-600 leading-relaxed max-w-3xl">
+                    Tahap awal dalam User-Centered Design (UCD) adalah memahami hambatan yang menghalangi pengguna mencapai tujuan mereka. Di Slack, ledakan informasi telah menjadi kontra-produktif bagi kolaborasi tim.
                 </p>
-            </div>
+            </header>
 
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-100 border-t-4 border-t-red-400 hover:shadow-md transition-shadow">
-                    <div class="text-4xl mb-4">🚨</div>
-                    <h3 class="text-xl font-bold mb-4 text-stone-800">Permasalahan Utama</h3>
-                    <ul class="space-y-3 text-stone-600">
-                        <li class="flex items-start"><span class="mr-2 text-red-500 font-bold">×</span> Terlalu banyak channel menyebabkan <i>overload</i> informasi.</li>
-                        <li class="flex items-start"><span class="mr-2 text-red-500 font-bold">×</span> Notifikasi yang berlebihan dan tidak terfilter.</li>
-                        <li class="flex items-start"><span class="mr-2 text-red-500 font-bold">×</span> Kesulitan melacak dan menemukan informasi/keputusan penting di tumpukan chat.</li>
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm border-t-4 border-t-red-500">
+                    <h3 class="text-lg font-bold mb-4 flex items-center">🔍 Masalah Utama</h3>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li class="flex items-start"><span class="text-red-500 mr-2">●</span> Overload informasi akibat jumlah channel yang tidak terkendali.</li>
+                        <li class="flex items-start"><span class="text-red-500 mr-2">●</span> Notifikasi berlebihan (Notification Fatigue) yang mengganggu fokus.</li>
+                        <li class="flex items-start"><span class="text-red-500 mr-2">●</span> Kesulitan menemukan data/keputusan penting di tengah tumpukan chat.</li>
                     </ul>
                 </div>
-
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-100 border-t-4 border-t-indigo-400 hover:shadow-md transition-shadow">
-                    <div class="text-4xl mb-4">🚀</div>
-                    <h3 class="text-xl font-bold mb-4 text-stone-800">Tantangan UX</h3>
-                    <ul class="space-y-3 text-stone-600">
-                        <li class="flex items-start"><span class="mr-2 text-indigo-500 font-bold">✓</span> Bagaimana meningkatkan fokus kerja pengguna?</li>
-                        <li class="flex items-start"><span class="mr-2 text-indigo-500 font-bold">✓</span> Bagaimana menciptakan sistem manajemen notifikasi yang cerdas?</li>
-                        <li class="flex items-start"><span class="mr-2 text-indigo-500 font-bold">✓</span> Bagaimana merancang efisiensi komunikasi tim yang lebih baik?</li>
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm border-t-4 border-t-indigo-500">
+                    <h3 class="text-lg font-bold mb-4 flex items-center">🎯 Tantangan Desain</h3>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li class="flex items-start"><span class="text-indigo-500 mr-2">●</span> Meningkatkan fokus kerja pengguna (Deep Work).</li>
+                        <li class="flex items-start"><span class="text-indigo-500 mr-2">●</span> Membangun sistem manajemen notifikasi yang lebih cerdas.</li>
+                        <li class="flex items-start"><span class="text-indigo-500 mr-2">●</span> Menciptakan efisiensi komunikasi tim yang berkelanjutan.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
+        <!-- SECTION: STRATEGY -->
         <section id="sec-strategy" class="hidden fade-in">
-            <div class="mb-10">
-                <h2 class="text-3xl font-bold mb-4">Langkah 1: Strategy (Strategi)</h2>
-                <p class="text-stone-600 text-lg leading-relaxed">
-                    Tahap fundamental dalam HCD (Human-Centered Design) menggunakan Kerangka Garrett. Pada bagian ini, kita menyelaraskan antara apa yang ingin dicapai oleh penyedia platform (Tujuan Bisnis Slack) dengan apa yang sebenarnya dibutuhkan oleh penggunanya (Kebutuhan Pengguna).
+            <header class="mb-12">
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-4">Langkah 1: Strategy</h2>
+                <p class="text-slate-600 leading-relaxed max-w-3xl">
+                    Lapisan pertama dalam Kerangka Garrett adalah menyelaraskan <i>Product Objectives</i> (tujuan bisnis) dengan <i>User Needs</i> (kebutuhan pengguna).
                 </p>
-            </div>
+            </header>
 
-            <div class="grid lg:grid-cols-2 gap-10">
-                <div class="space-y-8">
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-stone-200 border-l-4 border-l-emerald-500">
-                        <h3 class="text-lg font-bold mb-3 flex items-center">📈 Tujuan Bisnis Platform (Slack)</h3>
-                        <p class="text-stone-600 text-sm mb-4">Apa yang ingin dicapai Slack dari sisi produk dan bisnis?</p>
-                        <ul class="list-disc list-inside space-y-2 text-stone-700 text-sm">
-                            <li>Meningkatkan <i>Retention Rate</i> pengguna aktif harian (DAU) yang produktif, bukan sekadar login.</li>
-                            <li>Mengurangi <i>Churn Rate</i> yang disebabkan oleh kelelahan pengguna (burnout platform).</li>
-                            <li>Memposisikan Slack sebagai "Digital HQ" yang terstruktur, meningkatkan konversi dari pengguna gratis ke berbayar (Enterprise).</li>
-                        </ul>
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div class="space-y-6">
+                    <div class="bg-indigo-600 text-white p-6 rounded-2xl shadow-lg shadow-indigo-100">
+                        <h4 class="font-bold mb-2">Tujuan Bisnis (Slack)</h4>
+                        <p class="text-indigo-100 text-sm leading-relaxed">Meningkatkan retensi pengguna dengan menjadi pusat kerja digital yang efisien, bukan sekadar aplikasi pesan instan yang melelahkan.</p>
                     </div>
-
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-stone-200 border-l-4 border-l-amber-500">
-                        <h3 class="text-lg font-bold mb-3 flex items-center">💡 Kebutuhan Pengguna</h3>
-                        <p class="text-stone-600 text-sm mb-4">Apa yang diharapkan pengguna untuk mengatasi masalah mereka?</p>
-                        <ul class="list-disc list-inside space-y-2 text-stone-700 text-sm">
-                            <li>Membutuhkan fitur kurasi pintar untuk membedakan pesan prioritas tinggi vs sekadar <i>chit-chat</i>.</li>
-                            <li>Membutuhkan zona waktu fokus (Deep Work Mode) tanpa rasa cemas tertinggal info (FOMO).</li>
-                            <li>Membutuhkan sistem pengarsipan/ringkasan thread yang memudahkan pencarian keputusan final tanpa membaca ratusan chat.</li>
-                        </ul>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                        <h4 class="font-bold mb-2">Kebutuhan Pengguna</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">Mendapatkan informasi yang relevan tepat waktu, tanpa distraksi konstan, dan kemudahan akses ke riwayat keputusan penting.</p>
+                    </div>
+                    <div class="p-4 bg-amber-50 rounded-xl border border-amber-100">
+                        <p class="text-xs text-amber-800 leading-relaxed font-medium italic">"Strategi UX ini berfokus pada transisi Slack dari 'Communication Tool' menjadi 'Productivity Partner'."</p>
                     </div>
                 </div>
-
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 flex flex-col items-center">
-                    <h3 class="text-lg font-bold mb-2 text-center">Gap Analysis: Pengalaman Pengguna</h3>
-                    <p class="text-xs text-stone-500 mb-6 text-center">Perbandingan keadaan saat ini dengan tujuan strategi desain</p>
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 text-center">
+                    <h4 class="text-sm font-bold text-slate-500 uppercase mb-6 tracking-widest">Gap Analysis: Produktivitas</h4>
                     <div class="chart-container">
                         <canvas id="strategyChart"></canvas>
                     </div>
-                    <p class="text-xs text-center text-stone-500 mt-4 px-4">Berdasarkan hipotesis awal: Diperlukan peningkatan drastis pada aspek 'Tingkat Fokus' dan 'Pencarian Info'.</p>
+                    <p class="text-[10px] text-slate-400 mt-4 italic">*Estimasi peningkatan dampak setelah implementasi strategi baru.</p>
                 </div>
             </div>
         </section>
 
+        <!-- SECTION: PERSONA -->
         <section id="sec-persona" class="hidden fade-in">
-             <div class="mb-10">
-                <h2 class="text-3xl font-bold mb-4">Persona Pengguna</h2>
-                <p class="text-stone-600 text-lg leading-relaxed">
-                    Visualisasi representatif dari target pengguna utama. Persona ini membantu tim desain untuk terus berempati dan mengambil keputusan berdasarkan kebutuhan nyata pengguna yang mengalami <i>information overload</i>.
+            <header class="mb-12">
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-4">User Persona</h2>
+                <p class="text-slate-600 leading-relaxed max-w-3xl">
+                    Mengenal target pengguna membantu kita mendesain solusi yang empatik. Mari bertemu Raditya, representasi dari pekerja profesional yang kewalahan.
                 </p>
-            </div>
+            </header>
 
-            <div class="bg-white rounded-2xl shadow-sm border border-stone-200 overflow-hidden flex flex-col md:flex-row">
-                <div class="bg-stone-100 p-8 md:w-1/3 flex flex-col items-center justify-center text-center border-b md:border-b-0 md:border-r border-stone-200">
-                    <div class="w-24 h-24 bg-indigo-200 rounded-full flex items-center justify-center text-5xl mb-4 shadow-inner">
-                        👨‍💻
-                    </div>
-                    <h3 class="text-2xl font-bold text-stone-800">Raditya "Adit"</h3>
-                    <p class="text-indigo-600 font-semibold mb-2">Project Manager</p>
-                    <div class="flex flex-wrap justify-center gap-2 mt-4 text-xs">
-                        <span class="bg-white px-3 py-1 rounded-full border border-stone-200">Usia: 28</span>
-                        <span class="bg-white px-3 py-1 rounded-full border border-stone-200">Tech-Savvy</span>
-                        <span class="bg-white px-3 py-1 rounded-full border border-stone-200">Remote Worker</span>
+            <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm flex flex-col lg:flex-row">
+                <div class="lg:w-1/3 bg-slate-50 p-10 flex flex-col items-center text-center border-b lg:border-b-0 lg:border-r border-slate-200">
+                    <div class="w-32 h-32 bg-indigo-100 rounded-full flex items-center justify-center text-6xl mb-6 shadow-inner">👨‍💼</div>
+                    <h3 class="text-2xl font-bold">Raditya, 28</h3>
+                    <p class="text-indigo-600 font-medium mb-6">Senior Project Manager</p>
+                    <div class="space-y-2 w-full">
+                        <div class="bg-white p-3 rounded-xl text-xs font-medium text-slate-500 border border-slate-100">Remote Worker</div>
+                        <div class="bg-white p-3 rounded-xl text-xs font-medium text-slate-500 border border-slate-100">High Information User</div>
                     </div>
                 </div>
-                
-                <div class="p-0 md:w-2/3 flex flex-col">
-                    <div class="flex border-b border-stone-200 px-6 pt-4 space-x-6 overflow-x-auto">
-                        <button onclick="switchTab('frustration')" id="tab-frustration" class="pb-3 text-sm font-medium tab-active transition-colors focus:outline-none">Frustrasi</button>
-                        <button onclick="switchTab('goals')" id="tab-goals" class="pb-3 text-sm font-medium text-stone-500 hover:text-stone-800 transition-colors focus:outline-none">Goals & Kebutuhan</button>
-                        <button onclick="switchTab('quote')" id="tab-quote" class="pb-3 text-sm font-medium text-stone-500 hover:text-stone-800 transition-colors focus:outline-none">Kutipan Perilaku</button>
+                <div class="lg:w-2/3 flex flex-col">
+                    <div class="flex border-b border-slate-200 px-8 pt-6 space-x-8">
+                        <button onclick="tab('pain')" id="tab-pain" class="pb-4 text-sm font-bold persona-tab-active transition-all">Pain Points</button>
+                        <button onclick="tab('needs')" id="tab-needs" class="pb-4 text-sm font-bold text-slate-400 hover:text-slate-600 transition-all">Kebutuhan</button>
                     </div>
-                    
-                    <div class="p-8 flex-1">
-                        <div id="content-frustration" class="block animate-fade-in">
-                            <h4 class="font-bold text-red-600 mb-4 flex items-center"><span class="text-xl mr-2">⛈️</span> Titik Sakit (Pain Points)</h4>
-                            <ul class="space-y-4">
-                                <li class="flex text-stone-700"><span class="mr-3 font-bold">•</span> Sering kehilangan fokus saat mengerjakan dokumen karena notifikasi merah di 15 channel berbeda.</li>
-                                <li class="flex text-stone-700"><span class="mr-3 font-bold">•</span> Membuang waktu 10-15 menit hanya untuk scroll ke atas mencari tautan final atau keputusan yang tertutup obrolan kasual tim.</li>
-                                <li class="flex text-stone-700"><span class="mr-3 font-bold">•</span> Merasa cemas (anxiety) saat harus menutup aplikasi Slack, takut ada instruksi mendesak dari atasan yang terlewat.</li>
+                    <div class="p-10 flex-1">
+                        <div id="content-pain" class="block animate-fade-in">
+                            <h4 class="text-red-500 font-bold mb-4 uppercase text-xs tracking-widest">⛈️ Titik Sakit</h4>
+                            <ul class="space-y-4 text-slate-600 leading-relaxed">
+                                <li class="flex items-start">
+                                    <span class="mr-3 mt-1 text-red-300">●</span>
+                                    <span>"Saya kehilangan 1 jam per hari hanya untuk membersihkan notifikasi yang tidak relevan."</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="mr-3 mt-1 text-red-300">●</span>
+                                    <span>"Instruksi klien sering tertumpuk oleh diskusi internal yang panjang di channel yang sama."</span>
+                                </li>
                             </ul>
                         </div>
-
-                        <div id="content-goals" class="hidden animate-fade-in">
-                            <h4 class="font-bold text-emerald-600 mb-4 flex items-center"><span class="text-xl mr-2">🎯</span> Tujuan (Goals)</h4>
-                            <ul class="space-y-4">
-                                <li class="flex text-stone-700"><span class="mr-3 font-bold">•</span> Ingin bisa memilah mana pesan dari manajemen (prioritas tinggi) dan mana obrolan divisi (prioritas rendah).</li>
-                                <li class="flex text-stone-700"><span class="mr-3 font-bold">•</span> Membutuhkan fitur ringkasan harian: "Apa yang saya lewatkan terkait Project A?".</li>
-                                <li class="flex text-stone-700"><span class="mr-3 font-bold">•</span> Ingin bekerja dengan tenang tanpa gangguan selama minimal 2 jam berturut-turut.</li>
+                        <div id="content-needs" class="hidden animate-fade-in">
+                            <h4 class="text-indigo-500 font-bold mb-4 uppercase text-xs tracking-widest">🎯 Harapan</h4>
+                            <ul class="space-y-4 text-slate-600 leading-relaxed">
+                                <li class="flex items-start">
+                                    <span class="mr-3 mt-1 text-indigo-300">●</span>
+                                    <span>Filter 'Pesan Mendesak' yang hanya menampilkan mention dari tim inti.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="mr-3 mt-1 text-indigo-300">●</span>
+                                    <span>Ringkasan harian otomatis untuk channel-channel sekunder.</span>
+                                </li>
                             </ul>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                        <div id="content-quote" class="hidden animate-fade-in flex flex-col h-full justify-center">
-                            <blockquote class="italic text-xl text-stone-600 border-l-4 border-indigo-300 pl-4 py-2 my-auto">
-                                "Saya pakai Slack untuk kerja lebih cepat, tapi kenyataannya saya malah jadi asisten Slack saya sendiri. Menyeleksi ratusan chat tiap hari bikin saya lelah sebelum mulai kerja."
-                            </blockquote>
-                        </div>
+        <!-- SECTION: SOLUTIONS -->
+        <section id="sec-solutions" class="hidden fade-in">
+            <header class="mb-12">
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-4">Solusi Desain Strategis</h2>
+                <p class="text-slate-600 leading-relaxed max-w-3xl">
+                    Berdasarkan pain points Raditya dan tujuan strategi Garrett, berikut adalah solusi untuk meningkatkan efisiensi komunikasi tim.
+                </p>
+            </header>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Solusi 1 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 hover:shadow-xl hover:shadow-slate-100 transition-all group">
+                    <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center font-bold text-lg mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors">01</div>
+                    <h3 class="text-xl font-bold mb-4">AI Smart Summaries</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">Secara otomatis merangkum diskusi panjang dalam satu paragraf, menyoroti poin keputusan dan aksi nyata (Action Items).</p>
+                    <div class="flex items-center text-[10px] font-bold text-indigo-500 uppercase tracking-widest">
+                        <span class="w-2 h-2 bg-indigo-500 rounded-full mr-2"></span> Efisiensi Penelusuran
+                    </div>
+                </div>
+                <!-- Solusi 2 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 hover:shadow-xl hover:shadow-slate-100 transition-all group">
+                    <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center font-bold text-lg mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors">02</div>
+                    <h3 class="text-xl font-bold mb-4">Priority Focused Mode</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">Mode yang secara otomatis memblokir notifikasi channel non-kritis selama jam sibuk, kecuali dari kontak yang ditandai sebagai 'Penting'.</p>
+                    <div class="flex items-center text-[10px] font-bold text-emerald-500 uppercase tracking-widest">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-2"></span> Fokus Kerja Maksimal
+                    </div>
+                </div>
+                <!-- Solusi 3 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 hover:shadow-xl hover:shadow-slate-100 transition-all group">
+                    <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center font-bold text-lg mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors">03</div>
+                    <h3 class="text-xl font-bold mb-4">Pinned Action Dashboard</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">Panel khusus di tiap channel yang memisahkan antara 'Obrolan' dan 'Keputusan/Tugas' agar informasi krusial tidak hilang.</p>
+                    <div class="flex items-center text-[10px] font-bold text-amber-500 uppercase tracking-widest">
+                        <span class="w-2 h-2 bg-amber-500 rounded-full mr-2"></span> Akurasi Informasi
+                    </div>
+                </div>
+                <!-- Solusi 4 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 hover:shadow-xl hover:shadow-slate-100 transition-all group">
+                    <div class="w-12 h-12 bg-slate-100 text-slate-600 rounded-2xl flex items-center justify-center font-bold text-lg mb-6 group-hover:bg-slate-700 group-hover:text-white transition-colors">04</div>
+                    <h3 class="text-xl font-bold mb-4">Notification Batching</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">Mengirimkan notifikasi non-prioritas dalam satu bundel per jam, alih-alih setiap kali ada pesan masuk.</p>
+                    <div class="flex items-center text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                        <span class="w-2 h-2 bg-slate-500 rounded-full mr-2"></span> Manajemen Notifikasi
                     </div>
                 </div>
             </div>
@@ -173,126 +219,90 @@
     </main>
 
     <script>
-        // Data for Radar Chart
-        const chartData = {
-            labels: [
-                'Tingkat Fokus Kerja',
-                'Kecepatan Komunikasi',
-                'Kemudahan Cari Info',
-                'Manajemen Stres (Notif)',
-                'Kerapian Ruang Kerja'
-            ],
-            datasets: [{
-                label: 'Kondisi Saat Ini (Masalah)',
-                data: [30, 80, 20, 20, 40],
-                fill: true,
-                backgroundColor: 'rgba(239, 68, 68, 0.2)',
-                borderColor: 'rgb(239, 68, 68)',
-                pointBackgroundColor: 'rgb(239, 68, 68)',
-                pointBorderColor: '#fff',
-                pointHoverBackgroundColor: '#fff',
-                pointHoverBorderColor: 'rgb(239, 68, 68)'
-            }, {
-                label: 'Kondisi Ideal (Tujuan UX)',
-                data: [85, 90, 85, 90, 80],
-                fill: true,
-                backgroundColor: 'rgba(79, 70, 229, 0.2)',
-                borderColor: 'rgb(79, 70, 229)',
-                pointBackgroundColor: 'rgb(79, 70, 229)',
-                pointBorderColor: '#fff',
-                pointHoverBackgroundColor: '#fff',
-                pointHoverBorderColor: 'rgb(79, 70, 229)'
-            }]
-        };
-
-        const config = {
-            type: 'radar',
-            data: chartData,
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                elements: {
-                    line: { tension: 0.3 }
+        // Chart Configuration for Strategy Section
+        let strategyChartInstance = null;
+        
+        const initChart = () => {
+            const ctx = document.getElementById('strategyChart').getContext('2d');
+            if (strategyChartInstance) strategyChartInstance.destroy();
+            
+            strategyChartInstance = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['Fokus Kerja', 'Pencarian Info', 'Kesehatan Mental', 'Respon Cepat', 'Kerapian Data'],
+                    datasets: [{
+                        label: 'Kondisi Sekarang',
+                        data: [30, 20, 40, 95, 25],
+                        backgroundColor: 'rgba(239, 68, 68, 0.2)',
+                        borderColor: '#ef4444',
+                        borderWidth: 2,
+                        pointRadius: 3
+                    }, {
+                        label: 'Target Strategi',
+                        data: [90, 85, 85, 75, 80],
+                        backgroundColor: 'rgba(79, 70, 229, 0.2)',
+                        borderColor: '#4f46e5',
+                        borderWidth: 2,
+                        pointRadius: 3
+                    }]
                 },
-                scales: {
-                    r: {
-                        angleLines: { color: 'rgba(0, 0, 0, 0.1)' },
-                        grid: { color: 'rgba(0, 0, 0, 0.1)' },
-                        pointLabels: {
-                            font: { size: 11, family: "'Inter', sans-serif" },
-                            color: '#444'
-                        },
-                        ticks: { display: false, min: 0, max: 100 }
-                    }
-                },
-                plugins: {
-                    legend: {
-                        position: 'bottom',
-                        labels: { font: { family: "'Inter', sans-serif", size: 12 }, usePointStyle: true }
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: { display: false },
+                            grid: { color: 'rgba(0,0,0,0.05)' }
+                        }
                     },
-                    tooltip: {
-                        backgroundColor: 'rgba(28, 25, 23, 0.9)',
-                        titleFont: { family: "'Inter', sans-serif" },
-                        bodyFont: { family: "'Inter', sans-serif" },
-                        padding: 10,
-                        cornerRadius: 4
+                    plugins: {
+                        legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 10 } } }
                     }
                 }
-            },
+            });
         };
 
-        let myRadarChart = null;
+        // Navigation Management
+        function nav(id) {
+            const sections = ['overview', 'strategy', 'persona', 'solutions'];
+            sections.forEach(s => {
+                document.getElementById('sec-' + s).classList.add('hidden');
+                document.getElementById('nav-' + s).classList.remove('nav-active');
+                document.getElementById('nav-' + s).classList.add('text-slate-600');
+            });
 
-        // Navigation Logic
-        function nav(sectionId) {
-            // Hide all sections
-            document.getElementById('sec-overview').classList.add('hidden');
-            document.getElementById('sec-strategy').classList.add('hidden');
-            document.getElementById('sec-persona').classList.add('hidden');
-            
-            // Remove active classes from nav
-            document.getElementById('nav-overview').classList.remove('nav-active', 'text-stone-600');
-            document.getElementById('nav-strategy').classList.remove('nav-active', 'text-stone-600');
-            document.getElementById('nav-persona').classList.remove('nav-active', 'text-stone-600');
-            
-            // Add inactive classes back
-            document.getElementById('nav-overview').classList.add('text-stone-600');
-            document.getElementById('nav-strategy').classList.add('text-stone-600');
-            document.getElementById('nav-persona').classList.add('text-stone-600');
+            document.getElementById('sec-' + id).classList.remove('hidden');
+            document.getElementById('nav-' + id).classList.add('nav-active');
+            document.getElementById('nav-' + id).classList.remove('text-slate-600');
 
-            // Show selected section & activate nav
-            document.getElementById('sec-' + sectionId).classList.remove('hidden');
-            document.getElementById('nav-' + sectionId).classList.remove('text-stone-600');
-            document.getElementById('nav-' + sectionId).classList.add('nav-active');
-
-            // Initialize chart only when Strategy section is visible to ensure proper sizing
-            if(sectionId === 'strategy' && !myRadarChart) {
-                const ctx = document.getElementById('strategyChart').getContext('2d');
-                myRadarChart = new Chart(ctx, config);
+            if (id === 'strategy') {
+                setTimeout(initChart, 50);
             }
         }
 
-        // Persona Tab Logic
-        function switchTab(tabId) {
-            // Hide all content
-            document.getElementById('content-frustration').classList.add('hidden');
-            document.getElementById('content-goals').classList.add('hidden');
-            document.getElementById('content-quote').classList.add('hidden');
-
-            // Reset tab styles
-            const tabs = ['frustration', 'goals', 'quote'];
+        // Persona Tab Management
+        function tab(id) {
+            const tabs = ['pain', 'needs'];
             tabs.forEach(t => {
-                const el = document.getElementById('tab-' + t);
-                el.classList.remove('tab-active', 'text-stone-800');
-                el.classList.add('text-stone-500');
+                document.getElementById('content-' + t).classList.add('hidden');
+                document.getElementById('tab-' + t).classList.remove('persona-tab-active');
+                document.getElementById('tab-' + t).classList.add('text-slate-400');
             });
 
-            // Show selected content & activate tab
-            document.getElementById('content-' + tabId).classList.remove('hidden');
-            const activeTab = document.getElementById('tab-' + tabId);
-            activeTab.classList.remove('text-stone-500');
-            activeTab.classList.add('tab-active', 'text-stone-800');
+            document.getElementById('content-' + id).classList.remove('hidden');
+            document.getElementById('tab-' + id).classList.add('persona-tab-active');
+            document.getElementById('tab-' + id).classList.remove('text-slate-400');
         }
+
+        // Auto-init for desktop view on load
+        window.onload = () => {
+            if (window.innerWidth > 768) {
+                // Pre-warm the chart hiddenly
+                initChart();
+            }
+        };
     </script>
 </body>
 </html>
