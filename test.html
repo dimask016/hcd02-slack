@@ -14,10 +14,7 @@
         .fade-in { animation: fadeIn 0.4s ease-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         .wireframe-box { background: repeating-linear-gradient(45deg, #f8fafc, #f8fafc 10px, #e2e8f0 10px, #e2e8f0 20px); border: 2px dashed #94a3b8; border-radius: 16px; }
-        .reflection-card { background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%); border-left: 4px solid #f59e0b; }
-        .group-card { background: linear-gradient(135deg, #eff6ff 0%, #e0e7ff 100%); border-left: 4px solid #4f46e5; }
-        .insight-card { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #22c55e; }
-        .definition-box { background-color: #ffffff; border-left: 4px solid #6366f1; padding: 1rem; margin-bottom: 1.5rem; border-radius: 0 0.75rem 0.75rem 0; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        
         #imageModal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 100; align-items: center; justify-content: center; padding: 20px; cursor: zoom-out; }
         #modalImg { max-width: 90%; max-height: 85vh; border-radius: 8px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); transform: scale(0.9); transition: transform 0.3s ease; }
         #imageModal.active { display: flex; animation: fadeIn 0.3s ease; }
@@ -58,7 +55,7 @@
                     <div class="grid md:grid-cols-2 gap-4 pt-3 border-t border-indigo-200">
                         <div>
                             <p class="text-[10px] uppercase tracking-wider text-indigo-500 font-bold">Pencetus</p>
-                            <p class="text-xs text-indigo-900 font-semibold">Stewart Butterfield, dkk.</p>
+                            <p class="text-xs text-indigo-900 font-semibold">Stewart Butterfield, Eric Costello, Cal Henderson, & Serguei Mourachov</p>
                         </div>
                         <div>
                             <p class="text-[10px] uppercase tracking-wider text-indigo-500 font-bold">HQ</p>
@@ -69,26 +66,36 @@
             </header>
 
             <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm mb-10">
-                <h3 class="text-lg font-bold mb-6 flex items-center gap-2 underline decoration-indigo-200">🎯 Eksplorasi Fungsi Utama</h3>
+                <h3 class="text-lg font-bold mb-6 flex items-center gap-2 underline decoration-indigo-200">🎯 Eksplorasi Fungsi Utama & Antarmuka</h3>
                 <div class="grid md:grid-cols-3 gap-6">
                     <div class="space-y-3">
                         <div class="aspect-video bg-slate-100 rounded-lg overflow-hidden border border-slate-200 flex items-center justify-center group relative cursor-pointer" onclick="openPreview('komunitas.jpg', 'Antarmuka Slack')">
-                            <img src="komunitas.jpg" class="object-cover w-full h-full opacity-80 group-hover:opacity-100">
+                            <img src="komunitas.jpg" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition-opacity">
                         </div>
                         <p class="text-xs font-bold text-slate-800">✓ Komunikasi Real-time</p>
                     </div>
                     <div class="space-y-3">
                         <div class="aspect-video bg-slate-100 rounded-lg overflow-hidden border border-slate-200 flex items-center justify-center group relative cursor-pointer" onclick="openPreview('integrasi.jpg', 'File Sharing')">
-                            <img src="integrasi.jpg" class="object-cover w-full h-full opacity-80 group-hover:opacity-100">
+                            <img src="integrasi.jpg" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition-opacity">
                         </div>
                         <p class="text-xs font-bold text-slate-800">✓ Berbagi File Terpusat</p>
                     </div>
                     <div class="space-y-3">
                         <div class="aspect-video bg-slate-100 rounded-lg overflow-hidden border border-slate-200 flex items-center justify-center group relative cursor-pointer" onclick="openPreview('google-drive.jpg', 'Integrasi App')">
-                            <img src="google-drive.jpg" class="object-cover w-full h-full opacity-80 group-hover:opacity-100">
+                            <img src="google-drive.jpg" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition-opacity">
                         </div>
                         <p class="text-xs font-bold text-slate-800">✓ Integrasi 2.400+ Aplikasi</p>
                     </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm mb-10">
+                <h3 class="text-lg font-bold mb-4">⚙️ Fitur yang Relevan</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-[13px]">
+                    <div><p class="font-bold text-indigo-600">📢 Channels</p><p class="text-slate-500">Ruang diskusi topik.</p></div>
+                    <div><p class="font-bold text-indigo-600">🔔 Notifikasi</p><p class="text-slate-500">Alert mention & activity.</p></div>
+                    <div><p class="font-bold text-indigo-600">🧵 Threads</p><p class="text-slate-500">Percakapan terorganisir.</p></div>
+                    <div><p class="font-bold text-indigo-600">🌙 Huddles</p><p class="text-slate-500">Komunikasi suara cepat.</p></div>
                 </div>
             </div>
 
@@ -141,12 +148,12 @@
 
         <section id="sec-scope" class="hidden fade-in">
             <h2 class="text-3xl font-extrabold text-slate-900 mb-6">Lapisan 2: Scope</h2>
-            <div class="bg-white p-6 border rounded-xl">Konten fungsionalitas fitur...</div>
+            <div class="bg-white p-6 border rounded-xl">Penentuan fitur fungsional dan kebutuhan konten.</div>
         </section>
 
         <section id="sec-structure" class="hidden fade-in">
             <h2 class="text-3xl font-extrabold text-slate-900 mb-6">Lapisan 3: Structure</h2>
-            <div class="bg-white p-6 border rounded-xl">Arsitektur informasi dan alur interaksi...</div>
+            <div class="bg-white p-6 border rounded-xl">Arsitektur informasi dan desain interaksi.</div>
         </section>
 
         <section id="sec-skeleton" class="hidden fade-in">
@@ -156,37 +163,46 @@
 
         <section id="sec-surface" class="hidden fade-in">
             <h2 class="text-3xl font-extrabold text-slate-900 mb-6">Lapisan 5: Surface</h2>
-            <div class="bg-white p-6 border rounded-xl">Desain visual dan elemen antarmuka...</div>
+            <div class="bg-white p-6 border rounded-xl">Elemen visual dan antarmuka akhir.</div>
         </section>
 
         <section id="sec-hcd" class="hidden fade-in">
             <h2 class="text-3xl font-extrabold text-slate-900 mb-6">🔄 Pendekatan HCD</h2>
             <div class="grid grid-cols-4 gap-4 text-center">
-                <div class="p-3 bg-indigo-50 rounded text-xs font-bold">Empathize</div>
-                <div class="p-3 bg-indigo-50 rounded text-xs font-bold">Define</div>
-                <div class="p-3 bg-indigo-50 rounded text-xs font-bold">Ideate</div>
-                <div class="p-3 bg-indigo-50 rounded text-xs font-bold">Prototype</div>
+                <div class="p-3 bg-indigo-50 rounded text-xs font-bold text-indigo-700">Empathize</div>
+                <div class="p-3 bg-indigo-50 rounded text-xs font-bold text-indigo-700">Define</div>
+                <div class="p-3 bg-indigo-50 rounded text-xs font-bold text-indigo-700">Ideate</div>
+                <div class="p-3 bg-indigo-50 rounded text-xs font-bold text-indigo-700">Prototype</div>
             </div>
         </section>
 
         <section id="sec-solutions" class="hidden fade-in">
             <h2 class="text-3xl font-extrabold text-slate-900 mb-6">💡 Solusi Desain</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="p-4 bg-white border rounded text-xs font-bold shadow-sm">AI Summaries</div>
-                <div class="p-4 bg-white border rounded text-xs font-bold shadow-sm">Smart Mute</div>
+                <div class="p-4 bg-white border rounded-xl text-xs font-bold shadow-sm">AI Summaries</div>
+                <div class="p-4 bg-white border rounded-xl text-xs font-bold shadow-sm">Mention Only Mode</div>
+                <div class="p-4 bg-white border rounded-xl text-xs font-bold shadow-sm">Daily Digest</div>
+                <div class="p-4 bg-white border rounded-xl text-xs font-bold shadow-sm">Smart Mute</div>
+                <div class="p-4 bg-white border rounded-xl text-xs font-bold shadow-sm">Priority Inbox</div>
+                <div class="p-4 bg-white border rounded-xl text-xs font-bold shadow-sm">Focus Timer</div>
+                <div class="p-4 bg-white border rounded-xl text-xs font-bold shadow-sm">Quick Archives</div>
+                <div class="p-4 bg-white border rounded-xl text-xs font-bold shadow-sm">Keyword Alerts</div>
             </div>
         </section>
 
         <section id="sec-insight" class="hidden fade-in">
-            <h2 class="text-3xl font-extrabold text-slate-900 mb-6">🔍 Insight</h2>
-            <div class="insight-card p-6 rounded-xl text-sm">Kesimpulan strategis desain...</div>
+            <h2 class="text-3xl font-extrabold text-slate-900 mb-6">🔍 Insight & Kesimpulan</h2>
+            <div class="bg-emerald-50 p-6 rounded-xl border border-emerald-100 text-sm text-emerald-800">
+                Kesimpulan strategis mengenai perkembangan UX Slack di masa depan.
+            </div>
         </section>
 
         <section id="sec-reflection" class="hidden fade-in">
-            <h2 class="text-3xl font-extrabold text-slate-900 mb-6">📝 Refleksi</h2>
-            <div class="group-card p-6 rounded-xl text-sm">Refleksi tim pengerjaan proyek...</div>
+            <h2 class="text-3xl font-extrabold text-slate-900 mb-6">📝 Refleksi Kelompok</h2>
+            <div class="bg-indigo-50 p-6 rounded-xl border border-indigo-100 text-sm text-indigo-800">
+                Catatan refleksi mengenai proses pengerjaan laporan ini.
+            </div>
         </section>
-
     </main>
 
     <div id="imageModal" onclick="this.classList.remove('active')">
@@ -196,14 +212,14 @@
 
     <script>
         let strategyChartInstance = null;
-        const initChart = () => {
+        function initChart() {
             const ctx = document.getElementById('strategyChart')?.getContext('2d');
             if (!ctx) return;
             if (strategyChartInstance) strategyChartInstance.destroy();
             strategyChartInstance = new Chart(ctx, {
                 type: 'radar',
                 data: {
-                    labels: ['Fokus', 'Pencarian', 'Kesehatan Mental', 'Respon', 'Kerapian'],
+                    labels: ['Fokus', 'Pencarian', 'Kesehatan', 'Respon', 'Kerapian'],
                     datasets: [
                         { label: 'Sekarang', data: [30, 20, 40, 95, 25], backgroundColor: 'rgba(239, 68, 68, 0.2)', borderColor: '#ef4444' },
                         { label: 'Target', data: [90, 85, 85, 75, 80], backgroundColor: 'rgba(79, 70, 229, 0.2)', borderColor: '#4f46e5' }
@@ -211,15 +227,13 @@
                 },
                 options: { responsive: true, maintainAspectRatio: false }
             });
-        };
+        }
 
         function nav(id) {
             const sections = ['overview', 'strategy', 'scope', 'structure', 'skeleton', 'surface', 'hcd', 'solutions', 'insight', 'reflection'];
             sections.forEach(s => {
-                const sec = document.getElementById('sec-' + s);
-                const btn = document.getElementById('nav-' + s);
-                if (sec) sec.classList.add('hidden');
-                if (btn) btn.classList.remove('nav-active');
+                document.getElementById('sec-' + s).classList.add('hidden');
+                document.getElementById('nav-' + s).classList.remove('nav-active');
             });
             document.getElementById('sec-' + id).classList.remove('hidden');
             document.getElementById('nav-' + id).classList.add('nav-active');
