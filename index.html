@@ -804,87 +804,117 @@
 
         <!-- SECTION: REFLEKSI & LAPORAN KELOMPOK -->
         <section id="sec-reflection" class="hidden fade-in">
-            <header class="mb-8">
-                <h2 class="text-3xl font-extrabold text-slate-900 mb-2">📝 Refleksi & Laporan Kelompok</h2>
-            </header>
-            
-            <!-- Laporan Kelompok -->
-            <div class="group-card p-6 rounded-xl mb-8">
-                <h3 class="font-bold text-xl mb-3 text-indigo-800">👥 Laporan Kelompok - Diskusi UX Slack</h3>
-                <div class="space-y-3 text-slate-700">
-                    <p><strong>📅 Tanggal Diskusi:</strong> 15 April 2026</p>
-                    <p><strong>👨‍💻 Anggota Kelompok:</strong> Raditya (PM), Sarah (UX Researcher), Dimas (UI Designer), Andi (Frontend Developer)</p>
-                    <p><strong>🎯 Topik:</strong> Menganalisis masalah notifikasi berlebihan di Slack dan merancang solusi menggunakan Kerangka Garrett.</p>
-                    <p><strong>💬 Ringkasan Diskusi:</strong></p>
-                    <ul class="list-disc list-inside ml-4 space-y-1">
-                        <li>Kami sepakat bahwa masalah utama adalah <strong>notification fatigue</strong> yang mengganggu produktivitas.</li>
-                        <li>Setelah brainstorming, terpilih 8 solusi potensial, dengan <strong>Mention Only Mode</strong> sebagai prioritas tertinggi.</li>
-                        <li>Kami memetakan setiap solusi ke dalam 5 lapisan Garrett untuk memastikan kelengkapan desain.</li>
-                        <li>Disepakati bahwa pendekatan HCD (melibatkan pengguna sejak awal) adalah kunci keberhasilan.</li>
-                        <li>Kami membuat wireframe low-fidelity sebagai visualisasi awal solusi.</li>
-                    </ul>
-                    <p><strong>✅ Kesepakatan Kelompok:</strong> Setiap anggota akan membuat refleksi individu, dan laporan ini akan dilampirkan sebagai bukti kolaborasi.</p>
+    <header class="mb-8">
+        <h2 class="text-3xl font-extrabold text-slate-900 mb-2">📝 Refleksi & Laporan Kelompok</h2>
+        <p class="text-slate-500 text-sm">Dokumentasi kolaborasi dan pembelajaran tim dalam merancang solusi UX Slack.</p>
+    </header>
+    
+    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm mb-8">
+        <h3 class="font-bold text-xl mb-4 text-indigo-700 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            Laporan Kolaborasi Tim
+        </h3>
+        <div class="grid md:grid-cols-2 gap-6 text-sm text-slate-700">
+            <div class="space-y-3">
+                <p><strong>📅 Tanggal Diskusi:</strong> 15 April 2026</p>
+                <p><strong>👥 Anggota:</strong> Dimas K, Kevin A, Azhar K, M.Rifqi, Stefany, Dharma</p>
+                <p><strong>🎯 Topik Utama:</strong> Reduksi <em>Information Overload</em> pada Slack menggunakan Kerangka Kerja 5 Lapisan Garrett.</p>
+            </div>
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                <p class="font-bold mb-2 text-indigo-900">Ringkasan Pencapaian:</p>
+                <ul class="list-disc list-inside space-y-1 text-[12px] leading-relaxed">
+                    <li>Sinkronisasi visi Strategi untuk menjawab masalah <em>Notification Fatigue</em>.</li>
+                    <li>Penetapan fitur prioritas: <em>Mention Only Mode</em> & <em>AI Summaries</em>.</li>
+                    <li>Validasi desain visual (Surface) berdasarkan teori psikologi warna Garrett.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-indigo-300 transition-colors">
+            <p class="text-sm text-slate-600 italic mb-6 leading-relaxed">"Proses ini menyadarkan kami bahwa masalah teknis seperti notifikasi berlebihan sebenarnya adalah masalah fundamental pada lapisan Strategy yang belum tuntas diakomodasi oleh sistem saat ini."</p>
+            <div class="flex items-center gap-3 border-t pt-4">
+                <div class="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold text-xs shadow-sm">DK</div>
+                <div>
+                    <p class="font-bold text-slate-900 text-sm">Dimas K</p>
+                    <p class="text-[10px] text-slate-400">15 April 2026</p>
                 </div>
             </div>
+        </div>
 
-            <!-- Refleksi Individu 1 -->
-            <div class="reflection-card p-6 rounded-xl mb-6">
-                <h3 class="font-bold text-lg mb-2 text-amber-800">📝 Refleksi Individu - Raditya (Project Manager)</h3>
-                <p class="text-slate-700 text-sm leading-relaxed">
-                    "Sebagai PM yang sehari-hari menggunakan Slack, saya sangat merasakan dampak negatif dari notifikasi berlebihan. 
-                    Dalam diskusi kelompok, saya menyadari bahwa masalah ini tidak hanya dialami oleh saya, tetapi juga oleh rekan-rekan tim. 
-                    Kerangka Garrett membantu kami melihat masalah secara sistematis—dari strategi bisnis hingga detail visual. 
-                    Saya belajar bahwa solusi UX yang baik harus dimulai dari memahami kebutuhan pengguna terdalam, bukan hanya menambah fitur. 
-                    Mention Only Mode adalah solusi yang saya paling nantikan karena akan sangat membantu fokus kerja saya."
-                </p>
-                <p class="text-xs text-amber-600 mt-2">— Raditya, 15 April 2026</p>
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-emerald-300 transition-colors">
+            <p class="text-sm text-slate-600 italic mb-6 leading-relaxed">"Menyusun arsitektur informasi pada lapisan Structure membantu kami memahami bagaimana mengatur ulang aliran data agar user bisa bekerja secara proaktif, bukan reaktif terhadap setiap notifikasi."</p>
+            <div class="flex items-center gap-3 border-t pt-4">
+                <div class="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-bold text-xs shadow-sm">KA</div>
+                <div>
+                    <p class="font-bold text-slate-900 text-sm">Kevin A</p>
+                    <p class="text-[10px] text-slate-400">15 April 2026</p>
+                </div>
             </div>
+        </div>
 
-            <!-- Refleksi Individu 2 -->
-            <div class="reflection-card p-6 rounded-xl mb-6">
-                <h3 class="font-bold text-lg mb-2 text-amber-800">📝 Refleksi Individu - Sarah (UX Researcher)</h3>
-                <p class="text-slate-700 text-sm leading-relaxed">
-                    "Melalui proyek ini, saya semakin yakin bahwa pendekatan HCD sangat penting. 
-                    Saat kami mewawancarai pengguna Slack, banyak yang mengeluhkan hal yang sama: kelelahan karena notifikasi. 
-            Namun, mereka tidak bisa mengartikulasikan solusi yang diinginkan. 
-            Tugas kami sebagai UX researcher adalah menerjemahkan pain points menjadi fitur yang konkret. 
-            Saya bangga karena kami berhasil mengidentifikasi Mention Only Mode sebagai kebutuhan eksplisit dari persona Raditya. 
-            Ke depan, saya ingin menguji wireframe ini ke pengguna nyata untuk memvalidasi asumsi kami."
-                </p>
-                <p class="text-xs text-amber-600 mt-2">— Sarah, 15 April 2026</p>
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-amber-300 transition-colors">
+            <p class="text-sm text-slate-600 italic mb-6 leading-relaxed">"Detail pada lapisan Surface bukan sekadar estetika. Pemilihan warna fungsional seperti Amber untuk mention adalah alat komunikasi visual krusial untuk menjaga fokus pengguna tetap terjaga."</p>
+            <div class="flex items-center gap-3 border-t pt-4">
+                <div class="w-10 h-10 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center font-bold text-xs shadow-sm">AK</div>
+                <div>
+                    <p class="font-bold text-slate-900 text-sm">Azhar K</p>
+                    <p class="text-[10px] text-slate-400">15 April 2026</p>
+                </div>
             </div>
+        </div>
 
-            <!-- Refleksi Individu 3 -->
-            <div class="reflection-card p-6 rounded-xl mb-6">
-                <h3 class="font-bold text-lg mb-2 text-amber-800">📝 Refleksi Individu - Dimas (UI Designer)</h3>
-                <p class="text-slate-700 text-sm leading-relaxed">
-                    "Saya awalnya fokus pada aspek visual, tapi setelah diskusi kelompok, saya sadar bahwa UI yang cantik tanpa fondasi struktur yang kuat tidak akan menyelesaikan masalah. 
-                    Kerangka Garrett mengajarkan saya untuk selalu memulai dari 'mengapa' (Strategy) sebelum 'bagaimana tampilannya' (Surface). 
-                    Wireframe yang kami buat sederhana namun fungsional—tujuannya adalah mengurangi noise visual agar pengguna bisa fokus. 
-                    Saya senang karena solusi seperti Mention Only Mode dan Daily Digest bisa divisualisasikan dengan jelas. 
-                    Tantangan selanjutnya adalah membuat high-fidelity prototype yang tetap mempertahankan prinsip minimalis."
-                </p>
-                <p class="text-xs text-amber-600 mt-2">— Dimas, 15 April 2026</p>
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-indigo-300 transition-colors">
+            <p class="text-sm text-slate-600 italic mb-6 leading-relaxed">"Lapisan Skeleton memberikan kerangka logis yang kuat. Saya menyadari bahwa kemudahan navigasi berasal dari penempatan elemen yang benar-benar mendukung tugas utama pengguna."</p>
+            <div class="flex items-center gap-3 border-t pt-4">
+                <div class="w-10 h-10 bg-indigo-50 text-indigo-500 rounded-full flex items-center justify-center font-bold text-xs shadow-sm">MR</div>
+                <div>
+                    <p class="font-bold text-slate-900 text-sm">M.Rifqi</p>
+                    <p class="text-[10px] text-slate-400">15 April 2026</p>
+                </div>
             </div>
+        </div>
 
-            <!-- Refleksi Individu 4 -->
-            <div class="reflection-card p-6 rounded-xl">
-                <h3 class="font-bold text-lg mb-2 text-amber-800">📝 Refleksi Individu - Andi (Frontend Developer)</h3>
-                <p class="text-slate-700 text-sm leading-relaxed">
-                    "Dari sudut pandang developer, saya sering kali hanya menerima spesifikasi desain tanpa tahu konteks di baliknya. 
-                    Proyek ini membuka mata saya bahwa setiap fitur yang kita bangun harus berakar pada kebutuhan pengguna. 
-            Saya jadi lebih menghargai proses riset dan desain sebelum coding dimulai. 
-            Selain itu, saya ikut memikirkan aspek teknis dari solusi yang diusulkan—misalnya, bagaimana implementasi Mention Only Mode 
-            yang tetap bisa memberikan notifikasi dari keyword penting tanpa membebani server. 
-            Saya berharap kolaborasi seperti ini terus berlanjut agar produk yang kita hasilkan benar-benar bermanfaat."
-                </p>
-                <p class="text-xs text-amber-600 mt-2">— Andi, 15 April 2026</p>
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-rose-300 transition-colors">
+            <p class="text-sm text-slate-600 italic mb-6 leading-relaxed">"Memetakan kebutuhan bisnis dan user di lapisan Strategy adalah kunci. Tanpa visi yang jelas, fitur canggih sekalipun hanya akan menambah kebisingan bagi pengguna Slack."</p>
+            <div class="flex items-center gap-3 border-t pt-4">
+                <div class="w-10 h-10 bg-rose-100 text-rose-600 rounded-full flex items-center justify-center font-bold text-xs shadow-sm">S</div>
+                <div>
+                    <p class="font-bold text-slate-900 text-sm">Stefany</p>
+                    <p class="text-[10px] text-slate-400">15 April 2026</p>
+                </div>
             </div>
+        </div>
 
-            <div class="mt-6 p-4 bg-slate-100 rounded-xl text-center text-sm text-slate-500">
-                📌 Laporan ini merupakan hasil kolaborasi tim. Setiap anggota telah membaca dan menyetujui isi refleksi di atas.
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-slate-400 transition-colors">
+            <p class="text-sm text-slate-600 italic mb-6 leading-relaxed">"Sinkronisasi antara setiap lapisan Garrett memastikan bahwa visi awal tim untuk menciptakan lingkungan kerja yang tenang tetap terjaga hingga ke detail desain antarmuka paling akhir."</p>
+            <div class="flex items-center gap-3 border-t pt-4">
+                <div class="w-10 h-10 bg-slate-100 text-slate-600 rounded-full flex items-center justify-center font-bold text-xs shadow-sm">D</div>
+                <div>
+                    <p class="font-bold text-slate-900 text-sm">Dharma</p>
+                    <p class="text-[10px] text-slate-400">15 April 2026</p>
+                </div>
             </div>
-        </section>
+        </div>
+
+    </div>
+
+    <div class="mt-10 p-8 bg-gradient-to-r from-indigo-700 to-indigo-900 rounded-3xl text-white text-center shadow-xl">
+        <h3 class="text-xl font-bold mb-4">💡 Kesimpulan Akhir Tim</h3>
+        <p class="text-indigo-100 text-sm leading-relaxed max-w-3xl mx-auto">
+            Melalui pendekatan 5 Lapisan Garrett, kami menyimpulkan bahwa efisiensi kolaborasi digital bukan tentang menambah lebih banyak fitur, melainkan tentang mengatur bagaimana informasi mengalir dan memprioritaskan perhatian manusia sebagai aset terpenting dalam produktivitas.
+        </p>
+        <div class="mt-6 flex justify-center gap-2">
+            <span class="px-3 py-1 bg-white/10 rounded-full text-[10px] font-medium border border-white/20">Human-Centered Design</span>
+            <span class="px-3 py-1 bg-white/10 rounded-full text-[10px] font-medium border border-white/20">The Elements of UX</span>
+            <span class="px-3 py-1 bg-white/10 rounded-full text-[10px] font-medium border border-white/20">Information Architecture</span>
+        </div>
+    </div>
+</section>
 
     </main>
 
