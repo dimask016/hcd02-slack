@@ -219,56 +219,85 @@
     </div>
         </section>
 
-        <!-- SECTION: STRATEGY -->
-        <section id="sec-strategy" class="hidden fade-in">
-            <header class="mb-8">
-                <h2 class="text-3xl font-extrabold text-slate-900 mb-2">Lapisan 1: Strategy</h2>
-                <p class="text-slate-500 text-sm">Menyelaraskan tujuan bisnis dengan kebutuhan pengguna.</p>
-            </header>
-            <div class="grid lg:grid-cols-2 gap-8">
-                <div class="space-y-5">
-                    <div class="bg-indigo-600 text-white p-5 rounded-xl">
-                        <h4 class="font-bold mb-1">🎯 Tujuan Bisnis (Slack)</h4>
-                        <p class="text-indigo-100 text-sm">Meningkatkan retensi pengguna dengan menjadi pusat kerja digital yang efisien, bukan sekadar aplikasi pesan instan yang melelahkan.</p>
-                    </div>
-                    <div class="bg-white p-5 rounded-xl border border-slate-200">
-                        <h4 class="font-bold mb-1">👥 Kebutuhan Pengguna</h4>
-                        <p class="text-slate-600 text-sm">Mendapatkan informasi relevan tepat waktu, tanpa distraksi konstan, dan kemudahan akses ke riwayat keputusan penting.</p>
-                    </div>
-                    <div class="p-4 bg-amber-50 rounded-xl border border-amber-100">
-                        <p class="text-xs text-amber-800 italic">"Strategi UX ini berfokus pada transisi Slack dari 'Communication Tool' menjadi 'Productivity Partner'."</p>
+       <section id="sec-strategy" class="hidden fade-in">
+    <header class="mb-8">
+        <h2 class="text-3xl font-extrabold text-slate-900 mb-2">Lapisan 1: Strategy</h2>
+        <p class="text-slate-500 text-sm">Menyelaraskan tujuan bisnis dengan kebutuhan pengguna.</p>
+    </header>
+    <div class="grid lg:grid-cols-2 gap-8">
+        <div class="space-y-5">
+            <div class="bg-indigo-600 text-white p-5 rounded-xl">
+                <h4 class="font-bold mb-1">🎯 Tujuan Bisnis (Slack)</h4>
+                <p class="text-indigo-100 text-sm">Meningkatkan retensi pengguna dengan menjadi pusat kerja digital yang efisien, bukan sekadar aplikasi pesan instan yang melelahkan.</p>
+            </div>
+            <div class="bg-white p-5 rounded-xl border border-slate-200">
+                <h4 class="font-bold mb-1">👥 Kebutuhan Pengguna</h4>
+                <p class="text-slate-600 text-sm">Mendapatkan informasi relevan tepat waktu, tanpa distraksi konstan, dan kemudahan akses ke riwayat keputusan penting.</p>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
+                <div class="bg-slate-50 p-4 border-b border-slate-200 flex items-center gap-3">
+                    <div class="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-sm">DK</div>
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-800">User Persona: Dimas K.</h4>
+                        <p class="text-[10px] text-slate-500">DC Server Ops | Responden #1</p>
                     </div>
                 </div>
-               <div class="bg-white p-5 rounded-xl border border-slate-200">
-    <h4 class="text-sm font-bold text-slate-500 uppercase mb-3 text-center">Gap Analysis: Produktivitas</h4>
-    <div class="chart-container">
-        <canvas id="strategyChart"></canvas>
-    </div>
-    
-    <div class="mt-6 space-y-4 border-t pt-4">
-        <div class="flex gap-3">
-            <div class="w-1 h-auto bg-red-500 rounded-full"></div>
-            <div>
-                <p class="text-xs font-bold text-red-600 uppercase">🔴 Kondisi Sekarang (Pain Points)</p>
-                <p class="text-[11px] text-slate-600 leading-relaxed">
-                    Saat ini, Slack unggul dalam <strong>Respon Cepat</strong>, namun mengorbankan <strong>Fokus Kerja</strong> dan <strong>Kesehatan Mental</strong> karena gangguan notifikasi yang terus-menerus. Pencarian informasi dan kerapian data berada pada titik terendah akibat tumpukan chat yang tidak terorganisir.
-                </p>
+                <div class="p-4 grid grid-cols-2 gap-4">
+                    <div>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">Frustrasi Utama</p>
+                        <div class="space-y-1">
+                            <p class="text-[11px] text-slate-600 leading-relaxed italic">"Skor 5: Sangat terganggu notifikasi tidak relevan dan mengalami fatigue berat."</p>
+                            <p class="text-[10px] text-red-600 font-medium">Kondisi: Informasi penting sering tertimbun (Ya).</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">Harapan (Fitur Prioritas)</p>
+                        <ul class="text-[11px] text-slate-600 list-disc list-inside space-y-0.5">
+                            <li class="font-semibold text-indigo-600">Mention Only Mode</li>
+                            <li class="font-semibold text-indigo-600">AI Summary</li>
+                            <li>Fleksibilitas DND per-channel</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-4 bg-amber-50 rounded-xl border border-amber-100">
+                <p class="text-xs text-amber-800 italic">"Strategi UX ini berfokus pada transisi Slack dari 'Communication Tool' menjadi 'Productivity Partner'."</p>
             </div>
         </div>
-        <div class="flex gap-3">
-            <div class="w-1 h-auto bg-indigo-600 rounded-full"></div>
-            <div>
-                <p class="text-xs font-bold text-indigo-600 uppercase">🔵 Target Strategi (Expected Outcome)</p>
-                <p class="text-[11px] text-slate-600 leading-relaxed">
-                    Strategi baru bertujuan menggeser fokus ke <strong>Deep Work</strong>. Dengan <i>AI Summaries</i> dan <i>Mention Only Mode</i>, tingkat fokus dan kesehatan mental ditargetkan meningkat drastis. Efisiensi pencarian informasi akan naik melalui sistem <i>Pinned Action</i> yang merapikan data penting.
-                </p>
+
+        <div class="bg-white p-5 rounded-xl border border-slate-200">
+            <h4 class="text-sm font-bold text-slate-500 uppercase mb-3 text-center">Gap Analysis: Produktivitas</h4>
+            <div class="chart-container">
+                <canvas id="strategyChart"></canvas>
             </div>
+            
+            <div class="mt-6 space-y-4 border-t pt-4">
+                <div class="flex gap-3">
+                    <div class="w-1 h-auto bg-red-500 rounded-full"></div>
+                    <div>
+                        <p class="text-xs font-bold text-red-600 uppercase">🔴 Kondisi Sekarang (Pain Points)</p>
+                        <p class="text-[11px] text-slate-600 leading-relaxed">
+                            Saat ini, Slack unggul dalam <strong>Respon Cepat</strong>, namun mengorbankan <strong>Fokus Kerja</strong> dan <strong>Kesehatan Mental</strong> karena gangguan notifikasi yang terus-menerus. Pencarian informasi dan kerapian data berada pada titik terendah akibat tumpukan chat yang tidak terorganisir.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex gap-3">
+                    <div class="w-1 h-auto bg-indigo-600 rounded-full"></div>
+                    <div>
+                        <p class="text-xs font-bold text-indigo-600 uppercase">🔵 Target Strategi (Expected Outcome)</p>
+                        <p class="text-[11px] text-slate-600 leading-relaxed">
+                            Strategi baru bertujuan menggeser fokus ke <strong>Deep Work</strong>. Dengan <i>AI Summaries</i> dan <i>Mention Only Mode</i>, tingkat fokus dan kesehatan mental ditargetkan meningkat drastis. Efisiensi pencarian informasi akan naik melalui sistem <i>Pinned Action</i> yang merapikan data penting.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="text-[10px] text-slate-400 text-center mt-4">*Estimasi peningkatan dampak berdasarkan metrik User-Centered Design.</p>
         </div>
     </div>
-    
-    <p class="text-[10px] text-slate-400 text-center mt-4">*Estimasi peningkatan dampak berdasarkan metrik User-Centered Design.</p>
-</div>
-        </section>
+</section>
 
         <!-- SECTION: SCOPE -->
        <section id="sec-scope" class="hidden fade-in">
@@ -768,7 +797,7 @@
         </div>
     </div>
 </div>
-               <div class="mt-10 grid md:grid-cols-2 gap-8">
+                <div class="mt-10 grid md:grid-cols-2 gap-8">
     
     <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm">
         <h3 class="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2">
@@ -855,8 +884,6 @@
 <div class="mt-6 p-4 bg-slate-100 rounded-xl text-center text-[10px] text-slate-500 italic">
     📌 Seluruh rencana ini memastikan bahwa solusi final benar-benar menjawab hambatan pengguna (User Goals) secara akurat.
 </div>
-
-            <!-- List Survey Pertanyaan-->
             <div class="p-6">
     <div class="grid md:grid-cols-2 gap-8">
         <div class="space-y-6">
@@ -874,10 +901,12 @@
                 </div>
                 <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
                     <p class="text-[11px] font-semibold text-slate-700 mb-2">2. Apakah Anda kesulitan menemukan kembali keputusan penting karena tertimbun obrolan santai?</p>
-                    <div class="flex gap-3 text-[9px] text-slate-500">
-                        <label class="flex items-center gap-1"><div class="w-2 h-2 rounded-full border border-slate-400"></div> Ya</label>
-                        <label class="flex items-center gap-1"><div class="w-2 h-2 rounded-full border border-slate-400"></div> Tidak</label>
-                        <label class="flex items-center gap-1"><div class="w-2 h-2 rounded-full border border-slate-400 font-bold text-indigo-600"></div> Sering Terjadi</label>
+                    <div class="flex gap-2 text-[9px]">
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded">1 (Tidak Sulit)</span>
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded">2</span>
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded">3</span>
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded">4</span>
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded font-bold text-indigo-600">5 (Sangat Sulit)</span>
                     </div>
                 </div>
                 <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
@@ -892,9 +921,12 @@
                 </div>
                 <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
                     <p class="text-[11px] font-semibold text-slate-700 mb-2">4. Apakah fitur Do Not Disturb (DND) saat ini sudah cukup fleksibel?</p>
-                    <div class="flex flex-col gap-1 text-[9px] text-slate-500">
-                        <label class="flex items-center gap-1"> Sudah Cukup</label>
-                        <label class="flex items-center gap-1 font-medium text-indigo-600"> Belum, butuh pengaturan per-channel</label>
+                    <div class="flex gap-2 text-[9px]">
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded">1 (Sangat Kurang)</span>
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded">2</span>
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded">3</span>
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded">4</span>
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded font-bold text-indigo-600">5 (Sudah Cukup)</span>
                     </div>
                 </div>
             </div>
@@ -907,30 +939,40 @@
                     <p class="text-[11px] font-semibold text-slate-700 mb-2">5. Seberapa terbantu Anda jika Slack memiliki "Mention Only Mode"?</p>
                     <div class="flex gap-2 text-[9px]">
                         <span class="px-2 py-1 bg-white border border-slate-200 rounded">1 (Tidak)</span>
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded">2</span>
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded">3</span>
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded">4</span>
                         <span class="px-2 py-1 bg-white border border-slate-200 rounded font-bold text-emerald-600">5 (Sangat Terbantu)</span>
                     </div>
                 </div>
                 <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
                     <p class="text-[11px] font-semibold text-slate-700 mb-2">6. Apakah AI Smart Summaries akan menghemat waktu Anda?</p>
-                    <div class="flex gap-3 text-[9px] text-slate-500">
-                        <label class="flex items-center gap-1"> Sangat Setuju</label>
-                        <label class="flex items-center gap-1"> Setuju</label>
-                        <label class="flex items-center gap-1"> Netral</label>
+                    <div class="flex gap-2 text-[9px]">
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded">1 (Tidak Setuju)</span>
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded">2</span>
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded">3</span>
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded">4</span>
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded font-bold text-emerald-600">5 (Sangat Setuju)</span>
                     </div>
                 </div>
                 <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
-                    <p class="text-[11px] font-semibold text-slate-700 mb-2">7. Seberapa sering Anda akan menggunakan Smart Keyword Alert (misal: "Urgent")?</p>
+                    <p class="text-[11px] font-semibold text-slate-700 mb-2">7. Seberapa sering Anda menggunakan Smart Keyword Alert (misal: "Urgent")?</p>
                     <div class="flex gap-2 text-[9px]">
-                        <span class="px-2 py-1 bg-white border border-slate-200 rounded">Jarang</span>
-                        <span class="px-2 py-1 bg-white border border-slate-200 rounded">Kadang</span>
-                        <span class="px-2 py-1 bg-white border border-slate-200 rounded font-bold text-emerald-600">Sangat Sering</span>
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded">1 (Jarang)</span>
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded">2</span>
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded">3</span>
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded">4</span>
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded font-bold text-emerald-600">5 (Sangat Sering)</span>
                     </div>
                 </div>
                 <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
                     <p class="text-[11px] font-semibold text-slate-700 mb-2">8. Apakah pemisahan tab "Chat" dan "Action Items" memudahkan Anda?</p>
-                    <div class="flex gap-3 text-[9px] text-slate-500">
-                        <label class="flex items-center gap-1"> Sangat Memudahkan</label>
-                        <label class="flex items-center gap-1"> Tidak Berpengaruh</label>
+                    <div class="flex gap-2 text-[9px]">
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded">1 (Tidak Membantu)</span>
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded">2</span>
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded">3</span>
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded">4</span>
+                        <span class="px-2 py-1 bg-white border border-slate-200 rounded font-bold text-emerald-600">5 (Sangat Membantu)</span>
                     </div>
                 </div>
             </div>
@@ -940,35 +982,44 @@
     <div class="mt-8 p-5 bg-indigo-50 rounded-2xl border border-indigo-100">
         <div class="grid md:grid-cols-2 gap-6">
             <div>
-                <p class="text-[11px] font-bold text-indigo-900 mb-2">9. Bagaimana Anda ingin menerima notifikasi non-prioritas?</p>
-                <div class="space-y-1 text-[9px] text-indigo-700">
-                    <p class="flex items-center gap-2"> Real-time (seperti sekarang)</p>
-                    <p class="flex items-center gap-2 font-bold"> Dikumpulkan dalam Daily Digest (Sekali sehari)</p>
+                <p class="text-[11px] font-bold text-indigo-900 mb-2">9. Seberapa setuju Anda jika notifikasi non-prioritas dikumpulkan dalam Daily Digest?</p>
+                <div class="flex gap-2 text-[9px]">
+                    <span class="px-2 py-1 bg-white border border-indigo-200 rounded">1 (Sangat Tidak Setuju)</span>
+                    <span class="px-2 py-1 bg-white border border-indigo-200 rounded">2</span>
+                    <span class="px-2 py-1 bg-white border border-indigo-200 rounded">3</span>
+                    <span class="px-2 py-1 bg-white border border-indigo-200 rounded">4</span>
+                    <span class="px-2 py-1 bg-white border border-indigo-200 rounded font-bold text-indigo-600">5 (Sangat Setuju)</span>
                 </div>
             </div>
             <div class="border-t md:border-t-0 md:border-l border-indigo-200 pt-4 md:pt-0 md:pl-6">
-                <p class="text-[11px] font-bold text-indigo-900 mb-2">10. Fitur Prioritas untuk Deep Work:</p>
+                <p class="text-[11px] font-bold text-indigo-900 mb-2">10. Fitur Prioritas untuk Deep Work (Multi-Pilihan):</p>
                 <div class="grid grid-cols-2 gap-1 text-[8px] text-indigo-700">
-                    <span class="px-2 py-1 bg-white rounded border border-indigo-200">Mention Mode</span>
-                    <span class="px-2 py-1 bg-white rounded border border-indigo-200">AI Summary</span>
-                    <span class="px-2 py-1 bg-white rounded border border-indigo-200">Action Dashboard</span>
-                    <span class="px-2 py-1 bg-white rounded border border-indigo-200">Keyword Alert</span>
+                    <span class="px-2 py-1 bg-white rounded border border-indigo-200 flex items-center gap-1">
+                        <div class="w-2 h-2 bg-indigo-500 rounded-sm"></div> Mention Mode
+                    </span>
+                    <span class="px-2 py-1 bg-white rounded border border-indigo-200 flex items-center gap-1">
+                        <div class="w-2 h-2 bg-indigo-500 rounded-sm"></div> AI Summary
+                    </span>
+                    <span class="px-2 py-1 bg-white rounded border border-indigo-200 flex items-center gap-1">
+                        <div class="w-2 h-2 bg-indigo-500 rounded-sm"></div> Action Dashboard
+                    </span>
+                    <span class="px-2 py-1 bg-white rounded border border-indigo-200 flex items-center gap-1">
+                        <div class="w-2 h-2 bg-indigo-500 rounded-sm"></div> Keyword Alert
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-            <!-- Rekap Jawaban dari tim internal -->
-      <div class="mt-10 bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm">
+<div class="mt-10 bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm">
     <div class="bg-indigo-600 p-4 text-white">
         <h3 class="text-sm font-bold flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
-            Data Jawaban Simulasi Responden (Internal Tim)
+            Data Jawaban Responden (Skala Terpadu 1-5)
         </h3>
-        <p class="text-[10px] text-indigo-100 mt-1">Rekapitulasi jawaban Dimas K, Kevin A, Dharma, M. Rifqi, dan Steffany.</p>
+        <p class="text-[10px] text-indigo-100 mt-1">Konversi nilai numerik untuk analisis statistik (N=5).</p>
     </div>
     
     <div class="overflow-x-auto">
@@ -988,66 +1039,96 @@
                 <tr class="bg-slate-50/50"><td colspan="7" class="p-2 px-4 text-[9px] font-bold text-slate-400 uppercase tracking-widest">Bagian 1: Identifikasi Kendala (Pain Points)</td></tr>
                 <tr>
                     <td class="p-4 text-center border-r">1</td>
-                    <td class="p-4 italic">Terganggu notifikasi tidak relevan? (1-5)</td>
+                    <td class="p-4">Terganggu notifikasi tidak relevan?</td>
                     <td class="p-4 text-center">5</td><td class="p-4 text-center">4</td><td class="p-4 text-center">5</td><td class="p-4 text-center">3</td><td class="p-4 text-center">5</td>
                 </tr>
                 <tr>
                     <td class="p-4 text-center border-r">2</td>
-                    <td class="p-4 italic">Kesulitan cari info penting (tertimbun)?</td>
-                    <td class="p-4 text-center text-red-500 font-medium">Ya</td><td class="p-4 text-center text-red-500 font-medium">Sering</td><td class="p-4 text-center text-red-500 font-medium">Ya</td><td class="p-4 text-center">Tidak</td><td class="p-4 text-center text-red-500 font-medium">Sering</td>
+                    <td class="p-4">Kesulitan cari info penting (tertimbun)?</td>
+                    <td class="p-4 text-center font-bold text-indigo-600">5</td><td class="p-4 text-center font-bold text-indigo-600">5</td><td class="p-4 text-center font-bold text-indigo-600">5</td><td class="p-4 text-center">1</td><td class="p-4 text-center font-bold text-indigo-600">5</td>
                 </tr>
                 <tr>
                     <td class="p-4 text-center border-r">3</td>
-                    <td class="p-4 italic">Dampak "Notification Fatigue" (1-5)</td>
-                    <td class="p-4 text-center">5</td><td class="p-4 text-center">5</td><td class="p-4 text-center">4</td><td class="p-4 text-center">3</td><td class="p-4 text-center">5</td>
+                    <td class="p-4">Dampak "Notification Fatigue"</td>
+                    <td class="p-4 text-center text-red-500">5</td><td class="p-4 text-center text-red-500">5</td><td class="p-4 text-center">4</td><td class="p-4 text-center">3</td><td class="p-4 text-center text-red-500">5</td>
                 </tr>
                 <tr>
                     <td class="p-4 text-center border-r">4</td>
-                    <td class="p-4 italic">Fitur DND Slack saat ini cukup?</td>
-                    <td class="p-4 text-center text-[9px]">Perlu per-channel</td><td class="p-4 text-center text-[9px]">Perlu per-channel</td><td class="p-4 text-center text-[9px]">Perlu per-channel</td><td class="p-4 text-center">Ya</td><td class="p-4 text-center text-[9px]">Perlu per-channel</td>
+                    <td class="p-4">Fitur DND Slack saat ini cukup?</td>
+                    <td class="p-4 text-center">1</td><td class="p-4 text-center">1</td><td class="p-4 text-center">1</td><td class="p-4 text-center">5</td><td class="p-4 text-center">1</td>
                 </tr>
 
                 <tr class="bg-slate-50/50"><td colspan="7" class="p-2 px-4 text-[9px] font-bold text-slate-400 uppercase tracking-widest">Bagian 2: Validasi Solusi (Proposed Features)</td></tr>
                 <tr>
                     <td class="p-4 text-center border-r">5</td>
-                    <td class="p-4 italic">Minat "Mention Only Mode" (1-5)</td>
-                    <td class="p-4 text-center font-bold text-indigo-600">5</td><td class="p-4 text-center font-bold text-indigo-600">5</td><td class="p-4 text-center font-bold text-indigo-600">5</td><td class="p-4 text-center">4</td><td class="p-4 text-center font-bold text-indigo-600">5</td>
+                    <td class="p-4">Minat "Mention Only Mode"</td>
+                    <td class="p-4 text-center font-bold text-emerald-600">5</td><td class="p-4 text-center font-bold text-emerald-600">5</td><td class="p-4 text-center font-bold text-emerald-600">5</td><td class="p-4 text-center">4</td><td class="p-4 text-center font-bold text-emerald-600">5</td>
                 </tr>
                 <tr>
                     <td class="p-4 text-center border-r">6</td>
-                    <td class="p-4 italic">AI Summaries hemat waktu? (1-5)</td>
+                    <td class="p-4">AI Summaries hemat waktu?</td>
                     <td class="p-4 text-center">5</td><td class="p-4 text-center">4</td><td class="p-4 text-center">5</td><td class="p-4 text-center">5</td><td class="p-4 text-center">5</td>
                 </tr>
                 <tr>
                     <td class="p-4 text-center border-r">7</td>
-                    <td class="p-4 italic">Gunakan Smart Keyword Alert? (1-5)</td>
+                    <td class="p-4">Gunakan Smart Keyword Alert?</td>
                     <td class="p-4 text-center">5</td><td class="p-4 text-center">3</td><td class="p-4 text-center">5</td><td class="p-4 text-center">2</td><td class="p-4 text-center">5</td>
                 </tr>
                 <tr>
                     <td class="p-4 text-center border-r">8</td>
-                    <td class="p-4 italic">Pemisahan Tab "Action Items"?</td>
-                    <td class="p-4 text-center">S. Setuju</td><td class="p-4 text-center">Setuju</td><td class="p-4 text-center">S. Setuju</td><td class="p-4 text-center">Netral</td><td class="p-4 text-center">S. Setuju</td>
+                    <td class="p-4">Pemisahan Tab "Action Items"?</td>
+                    <td class="p-4 text-center">5</td><td class="p-4 text-center">4</td><td class="p-4 text-center">5</td><td class="p-4 text-center">3</td><td class="p-4 text-center">5</td>
                 </tr>
                 <tr>
                     <td class="p-4 text-center border-r">9</td>
-                    <td class="p-4 italic">Setuju dengan "Daily Digest"? (1-5)</td>
+                    <td class="p-4">Setuju dengan "Daily Digest"?</td>
                     <td class="p-4 text-center">5</td><td class="p-4 text-center">4</td><td class="p-4 text-center">5</td><td class="p-4 text-center">3</td><td class="p-4 text-center">5</td>
                 </tr>
 
                 <tr class="bg-indigo-50/50"><td colspan="7" class="p-2 px-4 text-[9px] font-bold text-indigo-400 uppercase tracking-widest">Bagian 3: Kesimpulan & Harapan Pengguna</td></tr>
                 <tr>
                     <td class="p-4 text-center border-r font-bold text-indigo-600">10</td>
-                    <td class="p-4 font-bold text-slate-800 italic">Fitur Prioritas (Bisa pilih >1)</td>
-                    <td class="p-4 text-[8px] leading-tight text-center">Mention Only,<br>AI Summary</td>
-                    <td class="p-4 text-[8px] leading-tight text-center">AI Summary,<br>Action Dashboard</td>
-                    <td class="p-4 text-[8px] leading-tight text-center">Mention Only,<br>Keyword Alert</td>
-                    <td class="p-4 text-[8px] leading-tight text-center">Action Dashboard</td>
-                    <td class="p-4 text-[8px] leading-tight text-center">Mention Only,<br>AI Summary</td>
+                    <td class="p-4 font-bold text-slate-800">Fitur Prioritas (Multi-Pilihan)</td>
+                    <td class="p-4 text-[8px] text-center">Mention Mode,<br>AI Summary</td>
+                    <td class="p-4 text-[8px] text-center">AI Summary,<br>Action Items</td>
+                    <td class="p-4 text-[8px] text-center">Mention Mode,<br>Keyword Alert</td>
+                    <td class="p-4 text-[8px] text-center">Action Items</td>
+                    <td class="p-4 text-[8px] text-center">Mention Mode,<br>AI Summary</td>
                 </tr>
             </tbody>
         </table>
     </div>
-</div>      
+</div>
+
+<!-- Grafik KOresponden-->
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10 fade-in">
+    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6 text-center">Tingkat Intensitas Masalah (Poin 1-4)</h4>
+        <div class="chart-container">
+            <canvas id="hcdBarChart"></canvas>
+        </div>
+        <div class="mt-6 p-3 bg-slate-50 rounded-lg border border-slate-100">
+            <p class="text-[10px] text-slate-500 leading-relaxed">
+                <strong>Metode Perhitungan:</strong> Mean Score (Σ Skor / 5).<br>
+                <strong>Hasil:</strong> Poin 1 & 3 memiliki skor tertinggi (4.4), menunjukkan "Notification Fatigue" adalah isu paling kritis bagi tim.
+            </p>
+        </div>
+    </div>
+
+    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6 text-center">Bobot Prioritas Solusi (Poin 5-10)</h4>
+        <div class="chart-container" style="height: 350px;">
+            <canvas id="hcdPieChart"></canvas>
+        </div>
+        <div class="mt-6 p-3 bg-indigo-50 rounded-lg border border-indigo-100">
+            <p class="text-[10px] text-indigo-500 leading-relaxed">
+                <strong>Metode Perhitungan:</strong> Total Akumulasi Skor.<br>
+                <strong>Hasil:</strong> "Mention Only Mode" dan "AI Summaries" mendominasi minat responden sebagai solusi paling berdampak.
+            </p>
+        </div>
+    </div>
+</div>
         </section>
 
         <!-- SECTION: SOLUTIONS (8 solusi) -->
@@ -1142,7 +1223,61 @@
             </div>
         </div>
 
-        
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-emerald-300 transition-colors">
+            <p class="text-sm text-slate-600 italic mb-6 leading-relaxed">"Menyusun arsitektur informasi pada lapisan Structure membantu kami memahami bagaimana mengatur ulang aliran data agar user bisa bekerja secara proaktif, bukan reaktif terhadap setiap notifikasi."</p>
+            <div class="flex items-center gap-3 border-t pt-4">
+                <div class="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-bold text-xs shadow-sm">KA</div>
+                <div>
+                    <p class="font-bold text-slate-900 text-sm">Kevin A</p>
+                    <p class="text-[10px] text-slate-400">15 April 2026</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-amber-300 transition-colors">
+            <p class="text-sm text-slate-600 italic mb-6 leading-relaxed">"Detail pada lapisan Surface bukan sekadar estetika. Pemilihan warna fungsional seperti Amber untuk mention adalah alat komunikasi visual krusial untuk menjaga fokus pengguna tetap terjaga."</p>
+            <div class="flex items-center gap-3 border-t pt-4">
+                <div class="w-10 h-10 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center font-bold text-xs shadow-sm">AK</div>
+                <div>
+                    <p class="font-bold text-slate-900 text-sm">Azhar K</p>
+                    <p class="text-[10px] text-slate-400">15 April 2026</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-indigo-300 transition-colors">
+            <p class="text-sm text-slate-600 italic mb-6 leading-relaxed">"Lapisan Skeleton memberikan kerangka logis yang kuat. Saya menyadari bahwa kemudahan navigasi berasal dari penempatan elemen yang benar-benar mendukung tugas utama pengguna."</p>
+            <div class="flex items-center gap-3 border-t pt-4">
+                <div class="w-10 h-10 bg-indigo-50 text-indigo-500 rounded-full flex items-center justify-center font-bold text-xs shadow-sm">MR</div>
+                <div>
+                    <p class="font-bold text-slate-900 text-sm">M.Rifqi</p>
+                    <p class="text-[10px] text-slate-400">15 April 2026</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-rose-300 transition-colors">
+            <p class="text-sm text-slate-600 italic mb-6 leading-relaxed">"Memetakan kebutuhan bisnis dan user di lapisan Strategy adalah kunci. Tanpa visi yang jelas, fitur canggih sekalipun hanya akan menambah kebisingan bagi pengguna Slack."</p>
+            <div class="flex items-center gap-3 border-t pt-4">
+                <div class="w-10 h-10 bg-rose-100 text-rose-600 rounded-full flex items-center justify-center font-bold text-xs shadow-sm">S</div>
+                <div>
+                    <p class="font-bold text-slate-900 text-sm">Stefany</p>
+                    <p class="text-[10px] text-slate-400">15 April 2026</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-slate-400 transition-colors">
+            <p class="text-sm text-slate-600 italic mb-6 leading-relaxed">"Sinkronisasi antara setiap lapisan Garrett memastikan bahwa visi awal tim untuk menciptakan lingkungan kerja yang tenang tetap terjaga hingga ke detail desain antarmuka paling akhir."</p>
+            <div class="flex items-center gap-3 border-t pt-4">
+                <div class="w-10 h-10 bg-slate-100 text-slate-600 rounded-full flex items-center justify-center font-bold text-xs shadow-sm">D</div>
+                <div>
+                    <p class="font-bold text-slate-900 text-sm">Dharma</p>
+                    <p class="text-[10px] text-slate-400">15 April 2026</p>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <div class="mt-10 p-8 bg-gradient-to-r from-indigo-700 to-indigo-900 rounded-3xl text-white text-center shadow-xl">
@@ -1159,8 +1294,111 @@
 </section>
 
     </main>
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
+
+       
+/* Grafik Rata-rata Skor Aspek HCD */
+function initHCDCharts() {
+    const totalResponden = 5;
+
+    // --- DATA GRAFIK BATANG (Berdasarkan Tabel Skala 1-5) ---
+    // 1. Notif Relevansi: (5+4+5+3+5)/5 = 4.4
+    // 2. Info Tertimbun:  (5+5+5+1+5)/5 = 4.2
+    // 3. Notif Fatigue:   (5+5+4+3+5)/5 = 4.4
+    // 4. Fleksibilitas DND: (1+1+1+5+1)/5 = 1.8 
+    
+    const ctxBar = document.getElementById('hcdBarChart').getContext('2d');
+    new Chart(ctxBar, {
+        type: 'bar',
+        data: {
+            labels: ['1. Notif Relevansi', '2. Info Tertimbun', '3. Notif Fatigue', '4. Fleksibilitas DND'],
+            datasets: [{
+                label: 'Rata-rata Skor',
+                data: [4.4, 4.2, 4.4, 1.8], 
+                backgroundColor: [
+                    '#6366f1', 
+                    '#8b5cf6', 
+                    '#ef4444', // Merah untuk fatigue tinggi
+                    '#cbd5e1'  // Abu-abu untuk skor rendah (DND tidak cukup)
+                ],
+                borderRadius: 8
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { 
+                legend: { display: false },
+                tooltip: {
+                    callbacks: {
+                        label: (item) => ` Skor Rata-rata: ${item.raw.toFixed(1)} / 5.0`
+                    }
+                }
+            },
+            scales: { 
+                y: { 
+                    beginAtZero: true, 
+                    max: 5,
+                    ticks: { stepSize: 1 }
+                } 
+            }
+        }
+    });
+
+    // --- DATA GRAFIK PIE (Berdasarkan Tabel Skala 1-5) ---
+    // 5. Mention Only: 5+5+5+4+5 = 24
+    // 6. AI Summaries: 5+4+5+5+5 = 24
+    // 7. Keyword Alert: 5+3+5+2+5 = 20
+    // 8. Action Items: 5+4+5+3+5 = 22
+    // 9. Daily Digest: 5+4+5+3+5 = 22
+    // 10. Fitur Prioritas Utama: 3 + 3 + 2 + 1 = 9 (contoh skor untuk fitur prioritas jika dihitung sebagai jumlah pilihan)
+    
+    const totalScoresSolusi = [24, 24, 20, 22, 22,9]; // Tambahkan skor untuk poin 10 jika diperlukan
+    const sumTotalAll = totalScoresSolusi.reduce((a, b) => a + b, 0);
+
+    const ctxPie = document.getElementById('hcdPieChart').getContext('2d');
+    new Chart(ctxPie, {
+        type: 'pie',
+        data: {
+            labels: [
+                '5. Mention Only Mode', 
+                '6. AI Smart Summaries', 
+                '7. Smart Keyword Alert', 
+                '8. Pinned Action Dashboard', 
+                '9. Daily Digest Report',
+                '10. Fitur Prioritas Utama' // Legend Baru
+            ],
+            datasets: [{
+                data: totalScoresSolusi,
+                backgroundColor: ['#4338ca', '#4f46e5', '#10b981', '#f59e0b', '#f97316','#ec4899'], // Warna untuk setiap solusi
+                borderWidth: 2,
+                borderColor: '#ffffff'
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { 
+                    position: 'bottom', 
+                    labels: { boxWidth: 10, font: { size: 9 }, padding: 12 } 
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            const val = context.raw;
+                            const percentage = ((val / sumTotalAll) * 100).toFixed(1) + '%';
+                            const avg = (val / totalResponden).toFixed(1);
+                            return ` Total Skor: ${val} (Avg: ${avg}/5) - Proporsi: ${percentage}`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+document.addEventListener('DOMContentLoaded', initHCDCharts);
 
 /* Fungsi tambahan untuk mendukung klik gambar jika diperlukan di masa depan */
       // Fungsi untuk membuka modal preview
@@ -1222,6 +1460,12 @@ window.onclick = function(event) {
             if (id === 'strategy') setTimeout(initChart, 50);
         }
         window.onload = () => { initChart(); };
+
+
+
+        /* Grafik Prioritas Fitur */
+        
+
     </script>
 
     <div id="imageModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-900/90 backdrop-blur-sm transition-all">
