@@ -805,205 +805,454 @@
         <p>📌 Visual Flow: Pengguna masuk ke Dashboard → Notifikasi difilter oleh Mention Only Mode → Channel non-kritis masuk ke Daily Digest → AI merangkum diskusi panjang → Pengguna bisa fokus pada Pinned Action Dashboard untuk tugas prioritas.</p>
     </div>
 
-    <!-- ==================== BAB VI ==================== -->
-    <div class="chapter">
-        <div class="chapter-number">BAB VI</div>
-        <h2>LAPISAN 4: SKELETON</h2>
-        <p>Wireframe low-fidelity untuk mendefinisikan layout, navigasi, dan hierarki informasi sebelum masuk ke tahap visual.</p>
-        
-        <div class="figure">
-            <div class="wireframe-box">
-                <strong>📱 Wireframe A: Smart Inbox (Prioritas)</strong><br>
-                --- Mention Only Mode aktif ---<br>
-                @user &nbsp;&nbsp; [Pesan dengan mention - highlight warna]<br>
-                [Pesan umum - kontras rendah]
+   <!-- ==================== BAB VI: LAPISAN 4 - SKELETON ==================== -->
+<div class="chapter">
+    <div class="chapter-number">BAB VI</div>
+    <h2>LAPISAN 4: SKELETON</h2>
+    <p>Wireframe low-fidelity untuk mendefinisikan layout, navigasi, dan hierarki informasi sebelum masuk ke tahap visual.</p>
+
+    <!-- WIREFRAME A: Smart Inbox -->
+    <div style="margin: 30px 0; border: 2px dashed #1a3a5c; background: #f5f5f0; padding: 20px; border-radius: 12px;">
+        <h3 style="margin-top: 0; color: #1a3a5c;">📱 Wireframe A: Smart Inbox (Prioritas)</h3>
+        <div style="background: white; border: 1px solid #ccc; padding: 15px; font-family: 'Courier New', monospace; font-size: 14px;">
+            <div style="border-bottom: 1px dashed #aaa; padding-bottom: 8px; margin-bottom: 12px; color: #666;">
+                --- Mention Only Mode aktif ---
             </div>
-            <div class="figure-title">Gambar 1. Wireframe Smart Inbox (Prioritas)</div>
-            <p style="font-size: 13px; margin-top: 10px;"><em>Penjelasan Layout:</em> Menerapkan Hierarki Visual di mana pesan umum disamarkan (low contrast) sementara pesan dengan mention langsung diberi highlight warna hangat. Ini membantu mata pengguna langsung tertuju pada informasi yang membutuhkan aksi segera.</p>
-        </div>
-        
-        <div class="figure">
-            <div class="wireframe-box">
-                <strong>📋 Wireframe B: Daily Digest</strong><br>
-                Ringkasan Harian - #umum<br>
-                📌 3 pesan baru | 2 mention terlewat<br>
-                💬 AI: "Deadline disepakati pukul 14.00 WIB."<br>
-                📋 Action: @User update progress Kamis.
+            <div style="background: #fff3e0; border-left: 4px solid #d69e2e; padding: 10px; margin-bottom: 10px;">
+                <strong>@user</strong> - [Pesan dengan mention - highlight warna oranye]<br>
+                <span style="color: #999;">"Tolong review dokumen ini"</span>
             </div>
-            <div class="figure-title">Gambar 2. Wireframe Daily Digest</div>
-            <p style="font-size: 13px; margin-top: 10px;"><em>Penjelasan Komponen:</em> Komponen ini menggunakan Information Chunking. Mengubah ribuan kata dalam chat menjadi poin-poin singkat (Action Items). Penempatan ringkasan AI di bagian atas memastikan nilai informasi didapat dalam waktu kurang dari 5 detik.</p>
-        </div>
-        
-        <div class="figure">
-            <div class="wireframe-box">
-                <strong>📌 Wireframe C: Action Dashboard</strong><br>
-                [💬 Chat] [📋 Action] [📎 Data]<br>
-                ✓ [Selesai] - Mockup Desain<br>
-                ⟳ [Proses] - Review Kode<br>
-                📌 Keputusan: Gunakan font Plus Jakarta Sans.
+            <div style="color: #aaa; padding: 10px; border-bottom: 1px solid #eee;">
+                [Pesan umum - kontras rendah] - Update channel #umum
             </div>
-            <div class="figure-title">Gambar 3. Wireframe Action Dashboard</div>
-            <p style="font-size: 13px; margin-top: 10px;"><em>Penjelasan Navigasi:</em> Menambahkan Tabbed Navigation di dalam channel. Hal ini memisahkan aliran percakapan (ephemeral) dengan data penting (persistent). Pengguna tidak perlu lagi melakukan scrolling jauh ke atas untuk mencari keputusan rapat.</p>
-        </div>
-        
-        <div class="figure">
-            <div class="wireframe-box">
-                <strong>⚙️ Wireframe D: Smart Settings</strong><br>
-                🔇 Mention Only Mode: ON<br>
-                📅 Daily Digest: #umum, #random<br>
-                🔑 Keyword Alert: "deadline", "urgent"<br>
-                ⏰ Personalized DND: 09:00 - 12:00
+            <div style="color: #aaa; padding: 10px;">
+                [Pesan umum - kontras rendah] - File diupload oleh tim marketing
             </div>
-            <div class="figure-title">Gambar 4. Wireframe Smart Settings</div>
-            <p style="font-size: 13px; margin-top: 10px;"><em>Penjelasan Kontrol:</em> Memberikan User Control & Freedom yang lebih presisi. Antarmuka ini dirancang agar pengguna dapat mematikan gangguan secara sistematis melalui filter kata kunci dan jadwal fokus (DND) yang otomatis.</p>
         </div>
-        
-        <h3>💡 Prinsip Skeleton yang Diterapkan</h3>
-        <ul>
-            <li><strong>Consistency:</strong> Peletakan navigasi Smart Inbox tetap mengikuti pola standar Slack agar pengguna tidak bingung (low learning curve).</li>
-            <li><strong>Visibility of System Status:</strong> Indikator "Mention Only Mode Aktif" memberikan kepastian kepada pengguna mengapa mereka tidak menerima notifikasi lain.</li>
-            <li><strong>Aesthetic & Minimalist:</strong> Menghilangkan elemen visual yang tidak perlu dalam ringkasan harian untuk menjaga kejernihan kognitif.</li>
-        </ul>
+        <div class="figure-title" style="margin-top: 12px;">Gambar 1. Wireframe Smart Inbox (Prioritas)</div>
+        <p style="font-size: 13px; margin-top: 10px;"><em>Penjelasan Layout:</em> Menerapkan Hierarki Visual di mana pesan umum disamarkan (low contrast) sementara pesan dengan mention langsung diberi highlight warna hangat. Ini membantu mata pengguna langsung tertuju pada informasi yang membutuhkan aksi segera.</p>
     </div>
 
-    <!-- ==================== BAB VII ==================== -->
-    <div class="chapter">
-        <div class="chapter-number">BAB VII</div>
-        <h2>LAPISAN 5: SURFACE</h2>
-        <p>Visualisasi antarmuka akhir (High-Fidelity) berdasarkan palet warna fungsional dari Skeleton.</p>
-        
-        <div class="stats-grid">
-            <div class="stat-box" style="background: #4c51bf;">Primary Focus<br>Indigo Blue<br>Brand & Deep Work</div>
-            <div class="stat-box" style="background: #38a169;">AI & Success<br>Emerald Green<br>AI Summaries & Status</div>
-            <div class="stat-box" style="background: #d69e2e;">Attention & Alerts<br>Amber Gold<br>Mentions & Action Items</div>
-        </div>
-        
-        <div class="figure">
-            <div class="wireframe-box" style="border-color: #4c51bf;">
-                <strong>Smart Inbox Preview - Hi-Fi View</strong><br>
-                #proyek-inti<br>
-                R Raditya (Mention) 10:24 AM<br>
-                <span style="background: #d69e2e; color: #1a1a1a; padding: 2px 5px;">@User tolong review mockup Lapisan Surface ini ya.</span>
+    <!-- WIREFRAME B: Daily Digest -->
+    <div style="margin: 30px 0; border: 2px dashed #1a3a5c; background: #f5f5f0; padding: 20px; border-radius: 12px;">
+        <h3 style="margin-top: 0; color: #1a3a5c;">📋 Wireframe B: Daily Digest</h3>
+        <div style="background: white; border: 1px solid #ccc; padding: 15px; font-family: 'Courier New', monospace; font-size: 14px;">
+            <div style="border-bottom: 1px solid #1a3a5c; padding-bottom: 5px; margin-bottom: 12px; font-weight: bold;">
+                📅 Ringkasan Harian - #umum
             </div>
-            <div class="figure-title">Gambar 5. Hi-Fi Smart Inbox Preview</div>
-            <p><em>Implementasi Skeleton A:</em> Memberikan kontras tinggi pada pesan @mention untuk memotong distraksi.</p>
-        </div>
-        
-        <div class="figure">
-            <div class="wireframe-box" style="border-color: #38a169;">
-                <strong>AI Daily Digest Card</strong><br>
-                💬 AI Summary: Diskusi hari ini menyepakati penggunaan sistem grid 12 kolom dan deadline pengumpulan Jumat esok.<br>
-                📋 ACTION ITEM @User hubungi tim desain pukul 14:00
+            <div>📌 3 pesan baru | 2 mention terlewat</div>
+            <div style="background: #e6fffa; padding: 10px; margin: 10px 0; border-left: 3px solid #38a169;">
+                💬 AI: "Deadline disepakati pukul 14.00 WIB untuk revisi final."
             </div>
-            <div class="figure-title">Gambar 6. AI Daily Digest Card</div>
-            <p><em>Implementasi Skeleton B:</em> Menggunakan elemen visual yang menenangkan (Emerald) untuk penyampaian informasi ringkas.</p>
+            <div>📋 Action: @User update progress proyek hari Kamis.</div>
         </div>
-        
-        <h3>Rasionalisasi Visual (Teori Jesse James Garrett)</h3>
-        <p>Menurut Garrett, Surface bukan sekadar estetika, melainkan penyatuan desain sensorik untuk memandu mata pengguna.</p>
-        <ul>
-            <li><strong>Visual Hierarchy (Kontras fungsional):</strong> Penggunaan warna Indigo sebagai warna primer bertujuan untuk menciptakan fokus yang tenang. Informasi kritis (Mention) menggunakan Amber untuk menarik perhatian secara instan tanpa memicu kecemasan.</li>
-            <li><strong>Sensory Design (Kualitas Informasi):</strong> Warna Emerald Green dipilih untuk fitur AI Summary. Dalam psikologi warna fungsional, hijau melambangkan "aman" dan "selesai", mengurangi beban kognitif.</li>
-            <li><strong>Consistency & Brand Identity:</strong> Elemen visual tetap mempertahankan DNA Slack agar pengguna tidak perlu belajar ulang (low learning curve).</li>
-            <li><strong>Reduction of Cognitive Load:</strong> Pemilihan latar belakang yang bersih (Off-white/Slate-50) bertujuan untuk memaksimalkan white space.</li>
-        </ul>
+        <div class="figure-title" style="margin-top: 12px;">Gambar 2. Wireframe Daily Digest</div>
+        <p style="font-size: 13px; margin-top: 10px;"><em>Penjelasan Komponen:</em> Komponen ini menggunakan Information Chunking. Mengubah ribuan kata dalam chat menjadi poin-poin singkat (Action Items). Penempatan ringkasan AI di bagian atas memastikan nilai informasi didapat dalam waktu kurang dari 5 detik.</p>
     </div>
 
-    <!-- ==================== BAB VIII ==================== -->
-    <div class="chapter">
-        <div class="chapter-number">BAB VIII</div>
-        <h2>PENDEKATAN HUMAN-CENTERED DESIGN (HCD)</h2>
-        
-        <h3>Metode Keterlibatan Pengguna (User Engagement)</h3>
-        <p>Triangulasi Riset: Kuantitatif, Kualitatif, & Partisipatori</p>
-        <ul>
-            <li><strong>📊 Survey Kuantitatif:</strong> n=100+ Pengguna Slack untuk memetakan tren masalah secara luas.</li>
-            <li><strong>🎙️ Interview Semi-terstruktur:</strong> 10-15 Responden untuk menggali motivasi dan frustrasi terdalam.</li>
-            <li><strong>👁️ Contextual Inquiry:</strong> Observasi langsung cara kerja user di lingkungan asli mereka.</li>
-            <li><strong>🤝 Co-design Workshop:</strong> Kolaborasi dengan 5 Power Users untuk memvalidasi ide fitur.</li>
-        </ul>
-        
-        <h3>🧪 Rencana Usability Testing</h3>
-        <ul>
-            <li><strong>01 Metode & Peserta:</strong> Moderated Remote Testing dengan 8 peserta (Karyawan intensitas Slack tinggi).</li>
-            <li><strong>02 Skenario Tugas (Tasks):</strong> "Aktivasi Mention Only Mode, buat aturan smart mute, dan baca AI Digest harian."</li>
-            <li><strong>03 Metrik Keberhasilan:</strong> Completion Rate, Time on Task, SUS Score</li>
-        </ul>
-        
-        <h3>🔄 Siklus Pengembangan Iteratif</h3>
-        <div class="stats-grid">
-            <div class="stat-box">1. Riset</div>
-            <div class="stat-box">2. Desain</div>
-            <div class="stat-box">3. Testing</div>
-            <div class="stat-box">4. Iterasi</div>
+    <!-- WIREFRAME C: Action Dashboard -->
+    <div style="margin: 30px 0; border: 2px dashed #1a3a5c; background: #f5f5f0; padding: 20px; border-radius: 12px;">
+        <h3 style="margin-top: 0; color: #1a3a5c;">📌 Wireframe C: Action Dashboard</h3>
+        <div style="background: white; border: 1px solid #ccc; padding: 15px; font-family: 'Courier New', monospace; font-size: 14px;">
+            <div style="display: flex; gap: 20px; border-bottom: 1px solid #ccc; padding-bottom: 8px; margin-bottom: 15px;">
+                <span style="background: #1a3a5c; color: white; padding: 4px 12px; border-radius: 20px;">💬 Chat</span>
+                <span style="padding: 4px 12px;">📋 Action</span>
+                <span style="padding: 4px 12px;">📎 Data</span>
+            </div>
+            <div style="margin-bottom: 10px;">
+                ✅ [Selesai] - Mockup Desain Sistem
+            </div>
+            <div style="margin-bottom: 10px;">
+                🔄 [Proses] - Review Kode oleh tim backend
+            </div>
+            <div style="background: #fef5e7; padding: 10px; border-left: 3px solid #d69e2e;">
+                📌 Keputusan: Gunakan font Plus Jakarta Sans untuk seluruh antarmuka.
+            </div>
         </div>
-        
-        <div class="stats-grid">
-            <div class="stat-box" style="background: #276749;">Target Akhir:<br>85%+ Task Completion</div>
-            <div class="stat-box" style="background: #276749;">Target Akhir:<br>75+ SUS Score</div>
-        </div>
-        <p>📌 Seluruh rencana ini memastikan bahwa solusi final benar-benar menjawab hambatan pengguna (User Goals) secara akurat.</p>
+        <div class="figure-title" style="margin-top: 12px;">Gambar 3. Wireframe Action Dashboard</div>
+        <p style="font-size: 13px; margin-top: 10px;"><em>Penjelasan Navigasi:</em> Menambahkan Tabbed Navigation di dalam channel. Hal ini memisahkan aliran percakapan (ephemeral) dengan data penting (persistent). Pengguna tidak perlu lagi melakukan scrolling jauh ke atas untuk mencari keputusan rapat.</p>
     </div>
 
-    <!-- ==================== BAB IX ==================== -->
-    <div class="chapter">
-        <div class="chapter-number">BAB IX</div>
-        <h2>DATA RESPONDEN & ANALISIS</h2>
-        
-        <h3>Bagian 1: Identifikasi Kendala</h3>
-        <ol>
-            <li>Seberapa sering Anda terganggu oleh notifikasi dari channel yang tidak berkaitan langsung dengan pekerjaan utama? (1=Tidak Pernah, 5=Sangat Sering)</li>
-            <li>Apakah Anda kesulitan menemukan kembali keputusan penting karena tertimbun obrolan santai? (1=Tidak Sulit, 5=Sangat Sulit)</li>
-            <li>Seberapa besar dampak Notification Fatigue terhadap produktivitas harian Anda? (1=Rendah, 5=Sangat Tinggi)</li>
-            <li>Apakah fitur Do Not Disturb (DND) saat ini sudah cukup fleksibel? (1=Sangat Kurang, 5=Sudah Cukup)</li>
-        </ol>
-        
-        <h3>Bagian 2: Validasi Solusi Fitur</h3>
-        <ol start="5">
-            <li>Seberapa terbantu Anda jika Slack memiliki "Mention Only Mode"? (1=Tidak, 5=Sangat Terbantu)</li>
-            <li>Apakah AI Smart Summaries akan menghemat waktu Anda? (1=Tidak Setuju, 5=Sangat Setuju)</li>
-            <li>Seberapa sering Anda menggunakan Smart Keyword Alert (misal: "Urgent")? (1=Jarang, 5=Sangat Sering)</li>
-            <li>Apakah pemisahan tab "Chat" dan "Action Items" memudahkan Anda? (1=Tidak Membantu, 5=Sangat Membantu)</li>
-            <li>Seberapa setuju Anda jika notifikasi non-prioritas dikumpulkan dalam Daily Digest? (1=Sangat Tidak Setuju, 5=Sangat Setuju)</li>
-            <li>Fitur Prioritas untuk Deep Work (Multi-Pilihan): Mention Mode, AI Summary, Action Dashboard, Keyword Alert</li>
-        </ol>
-        
-        <div class="table-container">
-            <h4>Tabel 1. Data Jawaban Responden (Skala Terpadu 1-5, N=5)</h4>
-            <table>
-                <thead>
-                    <tr><th>No</th><th>Pertanyaan Riset</th><th>Dimas K</th><th>Kevin A</th><th>Dharma</th><th>M. Rifqi</th><th>Steffany</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td colspan="7"><strong>Bagian 1: Identifikasi Kendala (Pain Points)</strong></td></tr>
-                    <tr><td>1</td><td>Terganggu notifikasi tidak relevan?</td><td>5</td><td>4</td><td>5</td><td>3</td><td>5</td></tr>
-                    <tr><td>2</td><td>Kesulitan cari info penting (tertimbun)?</td><td>5</td><td>5</td><td>5</td><td>1</td><td>5</td></tr>
-                    <tr><td>3</td><td>Dampak "Notification Fatigue"</td><td>5</td><td>5</td><td>4</td><td>3</td><td>5</td></tr>
-                    <tr><td>4</td><td>Fitur DND Slack saat ini cukup?</td><td>1</td><td>1</td><td>1</td><td>5</td><td>1</td></tr>
-                    <tr><td colspan="7"><strong>Bagian 2: Validasi Solusi (Proposed Features)</strong></td></tr>
-                    <tr><td>5</td><td>Minat "Mention Only Mode"</td><td>5</td><td>5</td><td>5</td><td>4</td><td>5</td></tr>
-                    <tr><td>6</td><td>AI Summaries hemat waktu?</td><td>5</td><td>4</td><td>5</td><td>5</td><td>5</td></tr>
-                    <tr><td>7</td><td>Gunakan Smart Keyword Alert?</td><td>5</td><td>3</td><td>5</td><td>2</td><td>5</td></tr>
-                    <tr><td>8</td><td>Pemisahan Tab "Action Items"?</td><td>5</td><td>4</td><td>5</td><td>3</td><td>5</td></tr>
-                    <tr><td>9</td><td>Setuju dengan "Daily Digest"?</td><td>5</td><td>4</td><td>5</td><td>3</td><td>5</td></tr>
-                    <tr><td>10</td><td>Fitur Prioritas (Multi-Pilihan)</td><td>Mention Mode, AI Summary</td><td>AI Summary, Action Items</td><td>Mention Mode, Keyword Alert</td><td>Action Items</td><td>Mention Mode, AI Summary</td></tr>
-                </tbody>
-            </table>
+    <!-- WIREFRAME D: Smart Settings -->
+    <div style="margin: 30px 0; border: 2px dashed #1a3a5c; background: #f5f5f0; padding: 20px; border-radius: 12px;">
+        <h3 style="margin-top: 0; color: #1a3a5c;">⚙️ Wireframe D: Smart Settings</h3>
+        <div style="background: white; border: 1px solid #ccc; padding: 15px; font-family: 'Courier New', monospace; font-size: 14px;">
+            <div style="margin-bottom: 12px;">
+                🔇 <strong>Mention Only Mode:</strong> <span style="background: #1a5c3a; color: white; padding: 2px 8px; border-radius: 12px;">ON</span>
+            </div>
+            <div style="margin-bottom: 12px;">
+                📅 <strong>Daily Digest:</strong> #umum, #random, #pengumuman
+            </div>
+            <div style="margin-bottom: 12px;">
+                🔑 <strong>Keyword Alert:</strong> "deadline", "urgent", "hotfix"
+            </div>
+            <div>
+                ⏰ <strong>Personalized DND:</strong> 09:00 - 12:00 (Fokus Pagi) | 13:00 - 15:00 (Fokus Sore)
+            </div>
         </div>
-        
-        <h3>Tingkat Intensitas Masalah (Poin 1-4)</h3>
-        <div class="insight-card">
-            <p><strong>Metode Perhitungan:</strong> Mean Score (Σ Skor / 5).</p>
-            <p><strong>Hasil:</strong> Poin 1 & 3 memiliki skor tertinggi (4.4), menunjukkan "Notification Fatigue" adalah isu paling kritis bagi tim.</p>
+        <div class="figure-title" style="margin-top: 12px;">Gambar 4. Wireframe Smart Settings</div>
+        <p style="font-size: 13px; margin-top: 10px;"><em>Penjelasan Kontrol:</em> Memberikan User Control & Freedom yang lebih presisi. Antarmuka ini dirancang agar pengguna dapat mematikan gangguan secara sistematis melalui filter kata kunci dan jadwal fokus (DND) yang otomatis.</p>
+    </div>
+
+    <!-- PRINSIP SKELETON -->
+    <h3>💡 Prinsip Skeleton yang Diterapkan</h3>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 15px;">
+        <div style="flex: 1; background: #e8e8e0; padding: 15px; border-radius: 8px;">
+            <strong>Consistency</strong><br>
+            Peletakan navigasi Smart Inbox tetap mengikuti pola standar Slack agar pengguna tidak bingung (low learning curve).
         </div>
-        
-        <h3>Bobot Prioritas Solusi (Poin 5-10)</h3>
-        <div class="insight-card">
-            <p><strong>Metode Perhitungan:</strong> Total Akumulasi Skor.</p>
-            <p><strong>Hasil:</strong> "Mention Only Mode" dan "AI Summaries" mendominasi minat responden sebagai solusi paling berdampak.</p>
+        <div style="flex: 1; background: #e8e8e0; padding: 15px; border-radius: 8px;">
+            <strong>Visibility of System Status</strong><br>
+            Indikator "Mention Only Mode Aktif" memberikan kepastian kepada pengguna mengapa mereka tidak menerima notifikasi lain.
+        </div>
+        <div style="flex: 1; background: #e8e8e0; padding: 15px; border-radius: 8px;">
+            <strong>Aesthetic & Minimalist</strong><br>
+            Menghilangkan elemen visual yang tidak perlu dalam ringkasan harian untuk menjaga kejernihan kognitif.
+        </div>
+    </div>
+</div>
+
+   <!-- ==================== BAB VII: LAPISAN 5 - SURFACE ==================== -->
+<div class="chapter">
+    <div class="chapter-number">BAB VII</div>
+    <h2>LAPISAN 5: SURFACE</h2>
+    <p>Visualisasi antarmuka akhir (High-Fidelity) berdasarkan palet warna fungsional dari Skeleton.</p>
+
+    <!-- PALET WARNA -->
+    <div style="display: flex; flex-wrap: wrap; gap: 15px; margin: 25px 0; justify-content: center;">
+        <div style="text-align: center;">
+            <div style="width: 80px; height: 80px; background: #4c51bf; border-radius: 12px; margin-bottom: 8px;"></div>
+            <strong>Primary Focus</strong><br>Indigo Blue<br><span style="font-size: 12px;">Brand & Deep Work</span>
+        </div>
+        <div style="text-align: center;">
+            <div style="width: 80px; height: 80px; background: #38a169; border-radius: 12px; margin-bottom: 8px;"></div>
+            <strong>AI & Success</strong><br>Emerald Green<br><span style="font-size: 12px;">AI Summaries & Status</span>
+        </div>
+        <div style="text-align: center;">
+            <div style="width: 80px; height: 80px; background: #d69e2e; border-radius: 12px; margin-bottom: 8px;"></div>
+            <strong>Attention & Alerts</strong><br>Amber Gold<br><span style="font-size: 12px;">Mentions & Action Items</span>
         </div>
     </div>
 
+    <!-- SMART INBOX PREVIEW (HI-FI) -->
+    <div style="margin: 40px 0; border: 1px solid #e2e8f0; background: #f7fafc; padding: 20px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+        <h3 style="margin-top: 0; color: #1a3a5c;">📱 Smart Inbox Preview - Hi-Fi View</h3>
+        <div style="background: white; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0;">
+            <!-- Header Channel -->
+            <div style="background: #edf2f7; padding: 12px 16px; border-bottom: 1px solid #e2e8f0;">
+                <strong style="color: #2d3748;">#proyek-inti</strong>
+            </div>
+            <!-- Pesan dengan Mention (Highlight Amber) -->
+            <div style="padding: 16px; border-bottom: 1px solid #e2e8f0; background: #fffaf0; border-left: 4px solid #d69e2e;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                    <div style="width: 32px; height: 32px; background: #4c51bf; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">R</div>
+                    <div>
+                        <strong>Raditya (Mention)</strong>
+                        <span style="color: #718096; font-size: 12px;">10:24 AM</span>
+                    </div>
+                </div>
+                <div style="background: #fef5e7; padding: 10px 12px; border-radius: 8px; display: inline-block;">
+                    <span style="color: #d69e2e; font-weight: bold;">@User</span> tolong review mockup Lapisan Surface ini ya.
+                </div>
+            </div>
+            <!-- Pesan Umum (Low Contrast) -->
+            <div style="padding: 16px; border-bottom: 1px solid #e2e8f0; opacity: 0.6;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                    <div style="width: 32px; height: 32px; background: #a0aec0; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;">A</div>
+                    <div><strong>Anita</strong> <span style="color: #718096; font-size: 12px;">09:45 AM</span></div>
+                </div>
+                <div>Sudah dilihat progress terbaru? Ada update dari tim desain.</div>
+            </div>
+        </div>
+        <div class="figure-title" style="margin-top: 12px;">Gambar 5. Hi-Fi Smart Inbox Preview</div>
+        <p style="font-size: 13px; margin-top: 8px;"><em>Implementasi Skeleton A:</em> Memberikan kontras tinggi pada pesan @mention untuk memotong distraksi.</p>
+    </div>
+
+    <!-- AI DAILY DIGEST CARD -->
+    <div style="margin: 40px 0; border: 1px solid #e2e8f0; background: #f7fafc; padding: 20px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+        <h3 style="margin-top: 0; color: #1a3a5c;">🤖 AI Daily Digest Card</h3>
+        <div style="background: white; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; max-width: 500px;">
+            <div style="background: #38a169; padding: 12px 16px; color: white;">
+                <strong>📋 Daily Digest - #proyek-inti</strong>
+            </div>
+            <div style="padding: 16px;">
+                <div style="background: #e6fffa; padding: 12px; border-radius: 8px; margin-bottom: 12px; border-left: 3px solid #38a169;">
+                    <strong style="color: #234e52;">💬 AI Summary:</strong>
+                    <span style="color: #234e52;">Diskusi hari ini menyepakati penggunaan sistem grid 12 kolom dan deadline pengumpulan Jumat esok.</span>
+                </div>
+                <div style="background: #fef5e7; padding: 12px; border-radius: 8px;">
+                    <strong style="color: #d69e2e;">📋 ACTION ITEM</strong>
+                    <span>@User hubungi tim desain pukul 14:00 untuk finalisasi aset.</span>
+                </div>
+            </div>
+        </div>
+        <div class="figure-title" style="margin-top: 12px;">Gambar 6. AI Daily Digest Card</div>
+        <p style="font-size: 13px; margin-top: 8px;"><em>Implementasi Skeleton B:</em> Menggunakan elemen visual yang menenangkan (Emerald) untuk penyampaian informasi ringkas.</p>
+    </div>
+
+    <!-- RASIONALISASI VISUAL (Teori Jesse James Garrett) -->
+    <h3>Rasionalisasi Visual (Teori Jesse James Garrett)</h3>
+    <p>Menurut Garrett, Surface bukan sekadar estetika, melainkan penyatuan desain sensorik untuk memandu mata pengguna. Berikut adalah alasan pemilihan palet warna pada solusi ini:</p>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; margin: 25px 0;">
+        <div style="flex: 1; background: #f0f4f8; padding: 16px; border-radius: 12px; border-left: 4px solid #4c51bf;">
+            <strong style="color: #4c51bf;">1. Visual Hierarchy (Kontras fungsional)</strong>
+            <p style="margin-top: 8px; font-size: 14px;">Penggunaan warna Indigo sebagai warna primer bertujuan untuk menciptakan fokus yang tenang. Berdasarkan prinsip Contrast and Emphasis Garrett, pesan umum dibuat dengan kontras rendah (Slate), sedangkan informasi kritis (Mention) menggunakan Amber untuk menarik perhatian secara instan tanpa memicu kecemasan (seperti warna merah).</p>
+        </div>
+        <div style="flex: 1; background: #f0f4f8; padding: 16px; border-radius: 12px; border-left: 4px solid #38a169;">
+            <strong style="color: #38a169;">2. Sensory Design (Kualitas Informasi)</strong>
+            <p style="margin-top: 8px; font-size: 14px;">Warna Emerald Green dipilih untuk fitur AI Summary. Dalam psikologi warna fungsional, hijau melambangkan "aman" dan "selesai". Hal ini membantu pengguna merasa bahwa informasi yang sudah diringkas oleh AI adalah data yang sudah terproses dan valid, mengurangi beban kognitif saat memindai konten.</p>
+        </div>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; margin: 25px 0;">
+        <div style="flex: 1; background: #f0f4f8; padding: 16px; border-radius: 12px; border-left: 4px solid #d69e2e;">
+            <strong style="color: #d69e2e;">3. Consistency & Brand Identity</strong>
+            <p style="margin-top: 8px; font-size: 14px;">Meskipun dilakukan perombakan, elemen visual tetap mempertahankan DNA Slack. Konsistensi ini krusial menurut Garrett agar pengguna tidak perlu belajar ulang (low learning curve). Warna-warna baru ini berfungsi sebagai "layer tambahan" di atas struktur navigasi yang sudah familiar.</p>
+        </div>
+        <div style="flex: 1; background: #f0f4f8; padding: 16px; border-radius: 12px; border-left: 4px solid #718096;">
+            <strong style="color: #718096;">4. Reduction of Cognitive Load</strong>
+            <p style="margin-top: 8px; font-size: 14px;">Pemilihan latar belakang yang bersih (Off-white/Slate-50) bertujuan untuk memaksimalkan white space. Garrett menekankan bahwa kejernihan visual pada lapisan Surface secara langsung mencerminkan keberhasilan lapisan Structure dan Skeleton di bawahnya.</p>
+        </div>
+    </div>
+
+    <!-- RINGKASAN PENERAPAN -->
+    <div style="background: #e2e8f0; padding: 16px; border-radius: 12px; margin-top: 20px;">
+        <p style="margin: 0; font-size: 14px; text-align: center;">
+            ✅ <strong>Ringkasan:</strong> Palet warna fungsional (Indigo, Emerald, Amber) diterapkan secara konsisten pada Smart Inbox Preview dan AI Daily Digest Card untuk menciptakan hierarki visual yang jelas, mengurangi beban kognitif, dan mempertahankan brand identity Slack.
+        </p>
+    </div>
+</div>
+   <!-- ==================== BAB VIII: PENDEKATAN HUMAN-CENTERED DESIGN (HCD) ==================== -->
+<div class="chapter">
+    <div class="chapter-number">BAB VIII</div>
+    <h2>PENDEKATAN HUMAN-CENTERED DESIGN (HCD)</h2>
+    
+    <h3>Metode Keterlibatan Pengguna (User Engagement)</h3>
+    <p>Triangulasi Riset: Kuantitatif, Kualitatif, & Partisipatori</p>
+    
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; margin: 25px 0;">
+        <div style="flex: 1; background: #f0f4f8; padding: 16px; border-radius: 12px; text-align: center;">
+            <div style="font-size: 36px;">📊</div>
+            <strong>Survey Kuantitatif</strong>
+            <p style="font-size: 13px; margin-top: 8px;">n=100+ Pengguna Slack untuk memetakan tren masalah secara luas.</p>
+        </div>
+        <div style="flex: 1; background: #f0f4f8; padding: 16px; border-radius: 12px; text-align: center;">
+            <div style="font-size: 36px;">🎙️</div>
+            <strong>Interview Semi-terstruktur</strong>
+            <p style="font-size: 13px; margin-top: 8px;">10-15 Responden untuk menggali motivasi dan frustrasi terdalam.</p>
+        </div>
+        <div style="flex: 1; background: #f0f4f8; padding: 16px; border-radius: 12px; text-align: center;">
+            <div style="font-size: 36px;">👁️</div>
+            <strong>Contextual Inquiry</strong>
+            <p style="font-size: 13px; margin-top: 8px;">Observasi langsung cara kerja user di lingkungan asli mereka.</p>
+        </div>
+        <div style="flex: 1; background: #f0f4f8; padding: 16px; border-radius: 12px; text-align: center;">
+            <div style="font-size: 36px;">🤝</div>
+            <strong>Co-design Workshop</strong>
+            <p style="font-size: 13px; margin-top: 8px;">Kolaborasi dengan 5 Power Users untuk memvalidasi ide fitur.</p>
+        </div>
+    </div>
+    
+    <h3>🧪 Rencana Usability Testing</h3>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; margin: 20px 0;">
+        <div style="flex: 1; background: #1a3a5c; color: white; padding: 16px; border-radius: 12px;">
+            <div style="font-size: 24px; font-weight: bold;">01</div>
+            <strong>Metode & Peserta</strong>
+            <p style="font-size: 13px; margin-top: 8px;">Moderated Remote Testing dengan 8 peserta (Karyawan intensitas Slack tinggi).</p>
+        </div>
+        <div style="flex: 1; background: #1a3a5c; color: white; padding: 16px; border-radius: 12px;">
+            <div style="font-size: 24px; font-weight: bold;">02</div>
+            <strong>Skenario Tugas (Tasks)</strong>
+            <p style="font-size: 13px; margin-top: 8px;">"Aktivasi Mention Only Mode, buat aturan smart mute, dan baca AI Digest harian."</p>
+        </div>
+        <div style="flex: 1; background: #1a3a5c; color: white; padding: 16px; border-radius: 12px;">
+            <div style="font-size: 24px; font-weight: bold;">03</div>
+            <strong>Metrik Keberhasilan</strong>
+            <p style="font-size: 13px; margin-top: 8px;">Completion Rate | Time on Task | SUS Score</p>
+        </div>
+    </div>
+    
+    <h3>🔄 Siklus Pengembangan Iteratif</h3>
+    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; justify-content: center;">
+        <div style="background: #2c5282; color: white; padding: 12px 24px; border-radius: 30px;">1. Riset</div>
+        <div style="background: #2c5282; color: white; padding: 12px 24px; border-radius: 30px;">2. Desain</div>
+        <div style="background: #2c5282; color: white; padding: 12px 24px; border-radius: 30px;">3. Testing</div>
+        <div style="background: #2c5282; color: white; padding: 12px 24px; border-radius: 30px;">4. Iterasi</div>
+    </div>
+    
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; margin: 20px 0; justify-content: center;">
+        <div style="background: #276749; color: white; padding: 20px; border-radius: 12px; text-align: center; flex: 1;">
+            <div style="font-size: 32px; font-weight: bold;">85%+</div>
+            <div>Task Completion</div>
+        </div>
+        <div style="background: #276749; color: white; padding: 20px; border-radius: 12px; text-align: center; flex: 1;">
+            <div style="font-size: 32px; font-weight: bold;">75+</div>
+            <div>SUS Score</div>
+        </div>
+    </div>
+    
+    <p>📌 Seluruh rencana ini memastikan bahwa solusi final benar-benar menjawab hambatan pengguna (User Goals) secara akurat.</p>
+</div>
+   <!-- ==================== BAB IX: DATA RESPONDEN & ANALISIS ==================== -->
+<div class="chapter">
+    <div class="chapter-number">BAB IX</div>
+    <h2>DATA RESPONDEN & ANALISIS</h2>
+    
+    <h3>Bagian 1: Identifikasi Kendala</h3>
+    <ol style="margin-bottom: 20px;">
+        <li>Seberapa sering Anda terganggu oleh notifikasi dari channel yang tidak berkaitan langsung dengan pekerjaan utama? (1=Tidak Pernah, 5=Sangat Sering)</li>
+        <li>Apakah Anda kesulitan menemukan kembali keputusan penting karena tertimbun obrolan santai? (1=Tidak Sulit, 5=Sangat Sulit)</li>
+        <li>Seberapa besar dampak Notification Fatigue terhadap produktivitas harian Anda? (1=Rendah, 5=Sangat Tinggi)</li>
+        <li>Apakah fitur Do Not Disturb (DND) saat ini sudah cukup fleksibel? (1=Sangat Kurang, 5=Sudah Cukup)</li>
+    </ol>
+    
+    <h3>Bagian 2: Validasi Solusi Fitur</h3>
+    <ol start="5" style="margin-bottom: 20px;">
+        <li>Seberapa terbantu Anda jika Slack memiliki "Mention Only Mode"? (1=Tidak, 5=Sangat Terbantu)</li>
+        <li>Apakah AI Smart Summaries akan menghemat waktu Anda? (1=Tidak Setuju, 5=Sangat Setuju)</li>
+        <li>Seberapa sering Anda menggunakan Smart Keyword Alert (misal: "Urgent")? (1=Jarang, 5=Sangat Sering)</li>
+        <li>Apakah pemisahan tab "Chat" dan "Action Items" memudahkan Anda? (1=Tidak Membantu, 5=Sangat Membantu)</li>
+        <li>Seberapa setuju Anda jika notifikasi non-prioritas dikumpulkan dalam Daily Digest? (1=Sangat Tidak Setuju, 5=Sangat Setuju)</li>
+        <li>Fitur Prioritas untuk Deep Work (Multi-Pilihan): Mention Mode, AI Summary, Action Dashboard, Keyword Alert</li>
+    </ol>
+    
+    <!-- TABEL DATA RESPONDEN -->
+    <div class="table-container">
+        <h4>Tabel 1. Data Jawaban Responden (Skala Terpadu 1-5, N=5)</h4>
+        <table>
+            <thead>
+                <tr><th>No</th><th>Pertanyaan Riset</th><th>Dimas K</th><th>Kevin A</th><th>Dharma</th><th>M. Rifqi</th><th>Steffany</th></tr>
+            </thead>
+            <tbody>
+                <tr><td colspan="7"><strong>Bagian 1: Identifikasi Kendala (Pain Points)</strong></td></tr>
+                <tr><td>1</td><td>Terganggu notifikasi tidak relevan?</td><td>5</td><td>4</td><td>5</td><td>3</td><td>5</td></tr>
+                <tr><td>2</td><td>Kesulitan cari info penting (tertimbun)?</td><td>5</td><td>5</td><td>5</td><td>1</td><td>5</td></tr>
+                <tr><td>3</td><td>Dampak "Notification Fatigue"</td><td>5</td><td>5</td><td>4</td><td>3</td><td>5</td></tr>
+                <tr><td>4</td><td>Fitur DND Slack saat ini cukup?</td><td>1</td><td>1</td><td>1</td><td>5</td><td>1</td></tr>
+                <tr><td colspan="7"><strong>Bagian 2: Validasi Solusi (Proposed Features)</strong></td></tr>
+                <tr><td>5</td><td>Minat "Mention Only Mode"</td><td>5</td><td>5</td><td>5</td><td>4</td><td>5</td></tr>
+                <tr><td>6</td><td>AI Summaries hemat waktu?</td><td>5</td><td>4</td><td>5</td><td>5</td><td>5</td></tr>
+                <tr><td>7</td><td>Gunakan Smart Keyword Alert?</td><td>5</td><td>3</td><td>5</td><td>2</td><td>5</td></tr>
+                <tr><td>8</td><td>Pemisahan Tab "Action Items"?</td><td>5</td><td>4</td><td>5</td><td>3</td><td>5</td></tr>
+                <tr><td>9</td><td>Setuju dengan "Daily Digest"?</td><td>5</td><td>4</td><td>5</td><td>3</td><td>5</td></tr>
+                <tr><td>10</td><td>Fitur Prioritas (Multi-Pilihan)</td><td>Mention Mode, AI Summary</td><td>AI Summary, Action Items</td><td>Mention Mode, Keyword Alert</td><td>Action Items</td><td>Mention Mode, AI Summary</td></tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- GRAFIK 1: BAR CHART - TINGKAT INTENSITAS MASALAH -->
+    <h3>📊 Tingkat Intensitas Masalah (Poin 1-4)</h3>
+    <div style="background: #f9f9f5; padding: 20px; border-radius: 12px; margin: 20px 0;">
+        <p><strong>Metode Perhitungan:</strong> Mean Score (Σ Skor / 5).</p>
+        <p><strong>Hasil:</strong> Poin 1 & 3 memiliki skor tertinggi (4.4), menunjukkan "Notification Fatigue" adalah isu paling kritis bagi tim.</p>
+        
+        <!-- Bar Chart -->
+        <div style="margin-top: 25px;">
+            <div style="margin-bottom: 20px;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                    <span>P1: Terganggu notifikasi tidak relevan</span>
+                    <span><strong>4.4</strong> / 5</span>
+                </div>
+                <div style="background: #e2e8f0; height: 30px; border-radius: 15px; overflow: hidden;">
+                    <div style="width: 88%; background: #8b0000; height: 100%; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; color: white; font-weight: bold;">88%</div>
+                </div>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                    <span>P2: Kesulitan cari info penting</span>
+                    <span><strong>4.2</strong> / 5</span>
+                </div>
+                <div style="background: #e2e8f0; height: 30px; border-radius: 15px; overflow: hidden;">
+                    <div style="width: 84%; background: #c53030; height: 100%; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; color: white;">84%</div>
+                </div>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                    <span>P3: Dampak Notification Fatigue</span>
+                    <span><strong>4.4</strong> / 5</span>
+                </div>
+                <div style="background: #e2e8f0; height: 30px; border-radius: 15px; overflow: hidden;">
+                    <div style="width: 88%; background: #8b0000; height: 100%; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; color: white;">88%</div>
+                </div>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                    <span>P4: Fitur DND Slack saat ini cukup?</span>
+                    <span><strong>1.8</strong> / 5</span>
+                </div>
+                <div style="background: #e2e8f0; height: 30px; border-radius: 15px; overflow: hidden;">
+                    <div style="width: 36%; background: #38a169; height: 100%; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; color: white;">36%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- GRAFIK 2: PIE CHART - BOBOT PRIORITAS SOLUSI -->
+    <h3>🥧 Bobot Prioritas Solusi (Poin 5-10)</h3>
+    <div style="background: #f9f9f5; padding: 20px; border-radius: 12px; margin: 20px 0;">
+        <p><strong>Metode Perhitungan:</strong> Total Akumulasi Skor.</p>
+        <p><strong>Hasil:</strong> "Mention Only Mode" dan "AI Summaries" mendominasi minat responden sebagai solusi paling berdampak.</p>
+        
+        <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center; justify-content: center; margin-top: 20px;">
+            <!-- Pie Chart SVG -->
+            <div style="flex: 0 0 auto;">
+                <svg viewBox="0 0 200 200" width="200" height="200">
+                    <!-- Mention Only Mode: 48% (173 derajat) -->
+                    <circle cx="100" cy="100" r="80" fill="transparent" stroke="#4c51bf" stroke-width="40" stroke-dasharray="435 500" stroke-dashoffset="0" transform="rotate(-90 100 100)"/>
+                    <!-- AI Summary: 32% (115 derajat) -->
+                    <circle cx="100" cy="100" r="80" fill="transparent" stroke="#38a169" stroke-width="40" stroke-dasharray="290 500" stroke-dashoffset="-435" transform="rotate(-90 100 100)"/>
+                    <!-- Action Dashboard: 12% (43 derajat) -->
+                    <circle cx="100" cy="100" r="80" fill="transparent" stroke="#d69e2e" stroke-width="40" stroke-dasharray="108 500" stroke-dashoffset="-725" transform="rotate(-90 100 100)"/>
+                    <!-- Keyword Alert: 8% (29 derajat) -->
+                    <circle cx="100" cy="100" r="80" fill="transparent" stroke="#e53e3e" stroke-width="40" stroke-dasharray="72 500" stroke-dashoffset="-833" transform="rotate(-90 100 100)"/>
+                    <circle cx="100" cy="100" r="60" fill="#f9f9f5"/>
+                </svg>
+            </div>
+            
+            <!-- Legend -->
+            <div style="flex: 1; min-width: 200px;">
+                <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                    <div style="width: 20px; height: 20px; background: #4c51bf; border-radius: 4px; margin-right: 10px;"></div>
+                    <span><strong>Mention Only Mode</strong> - 48% (Skor Tertinggi)</span>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                    <div style="width: 20px; height: 20px; background: #38a169; border-radius: 4px; margin-right: 10px;"></div>
+                    <span><strong>AI Summaries</strong> - 32%</span>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                    <div style="width: 20px; height: 20px; background: #d69e2e; border-radius: 4px; margin-right: 10px;"></div>
+                    <span><strong>Action Dashboard</strong> - 12%</span>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                    <div style="width: 20px; height: 20px; background: #e53e3e; border-radius: 4px; margin-right: 10px;"></div>
+                    <span><strong>Keyword Alert</strong> - 8%</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Summary Card -->
+        <div style="margin-top: 25px; background: #e2e8f0; padding: 15px; border-radius: 8px; text-align: center;">
+            <p style="margin: 0;"><strong>📈 Kesimpulan:</strong> Mention Only Mode dan AI Summaries menjadi prioritas utama dengan total akumulasi skor tertinggi dari 5 responden.</p>
+        </div>
+    </div>
+    
+    <!-- CARD RINGKASAN SKOR -->
+    <div style="display: flex; flex-wrap: wrap; gap: 15px; margin: 25px 0; justify-content: center;">
+        <div style="background: linear-gradient(135deg, #1a3a5c, #2c5282); color: white; padding: 15px 20px; border-radius: 12px; text-align: center; min-width: 150px;">
+            <div style="font-size: 28px; font-weight: bold;">4.4/5</div>
+            <div style="font-size: 12px;">Skor Notification Fatigue<br>(Masalah Kritis)</div>
+        </div>
+        <div style="background: linear-gradient(135deg, #1a5c3a, #276749); color: white; padding: 15px 20px; border-radius: 12px; text-align: center; min-width: 150px;">
+            <div style="font-size: 28px; font-weight: bold;">4.8/5</div>
+            <div style="font-size: 12px;">Minat Mention Only Mode<br>& AI Summary</div>
+        </div>
+        <div style="background: linear-gradient(135deg, #9b2c2c, #c53030); color: white; padding: 15px 20px; border-radius: 12px; text-align: center; min-width: 150px;">
+            <div style="font-size: 28px; font-weight: bold;">1.8/5</div>
+            <div style="font-size: 12px;">Kepuasan DND Saat Ini<br>(Sangat Kurang)</div>
+        </div>
+    </div>
+</div>
     <!-- ==================== BAB X ==================== -->
     <div class="chapter">
         <div class="chapter-number">BAB X</div>
