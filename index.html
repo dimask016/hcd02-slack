@@ -1149,35 +1149,78 @@
         </section>
 
         <!-- SECTION: INSIGHT & KESIMPULAN -->
-        <section id="sec-insight" class="hidden fade-in">
-            <header class="mb-8">
-                <h2 class="text-3xl font-extrabold text-slate-900 mb-2">🔍 Insight & Kesimpulan</h2>
-                <p class="text-slate-500 text-sm">Pembelajaran utama dari analisis UX Slack menggunakan Kerangka Garrett.</p>
-            </header>
-            <div class="insight-card p-6 rounded-xl mb-6">
-                <h3 class="font-bold text-lg mb-3">💡 Key Insights</h3>
-                <ul class="space-y-3 text-slate-700">
-                    <li class="flex items-start gap-2"><span class="text-green-600 text-xl">✓</span> <strong>Notification fatigue adalah akar masalah utama</strong> - 78% responden dalam studi internal mengaku kewalahan dengan notifikasi Slack.</li>
-                    <li class="flex items-start gap-2"><span class="text-green-600 text-xl">✓</span> <strong>Mention Only Mode menjadi solusi paling diminati</strong> - 9 dari 10 partisipan ingin fitur ini segera tersedia.</li>
-                    <li class="flex items-start gap-2"><span class="text-green-600 text-xl">✓</span> <strong>Pemisahan chat dan action items</strong> dapat menghemat hingga 30% waktu pencarian informasi.</li>
-                    <li class="flex items-start gap-2"><span class="text-green-600 text-xl">✓</span> <strong>Pendekatan HCD memastikan solusi tepat sasaran</strong> - iterasi berdasarkan feedback pengguna menghasilkan desain yang lebih intuitif.</li>
-                </ul>
-            </div>
-            <div class="bg-white p-6 rounded-xl border border-slate-200">
-                <h3 class="font-bold text-lg mb-3">📝 Kesimpulan Akhir</h3>
-                <p class="text-slate-600 leading-relaxed">
-                    Berdasarkan analisis 5 lapisan Kerangka Garrett (Strategy, Scope, Structure, Skeleton, Surface) yang dipadukan dengan pendekatan Human-Centered Design, 
-                    kami menyimpulkan bahwa Slack perlu bertransformasi dari <strong>"communication tool"</strong> menjadi <strong>"productivity partner"</strong>. 
-                    Solusi utama yang diusulkan—<strong>Mention Only Mode, Smart Channel Mute, AI Smart Summaries, dan Pinned Action Dashboard</strong>—terbukti secara konseptual mampu 
-                    mengurangi notification fatigue hingga 60% dan meningkatkan efisiensi kerja tim secara signifikan. 
-                    Implementasi bertahap dengan melibatkan pengguna dalam setiap iterasi adalah kunci keberhasilan.
-                </p>
-                <div class="mt-4 p-3 bg-indigo-50 rounded-lg">
-                    <p class="text-sm font-semibold text-indigo-800">🎯 Rekomendasi Final:</p>
-                    <p class="text-sm">1. Prioritaskan pengembangan Mention Only Mode & Smart Channel Mute.<br>2. Lakukan usability testing dengan prototipe high-fidelity.<br>3. Luncurkan fitur secara bertahap (beta testing ke power users).<br>4. Kumpulkan feedback dan lakukan iterasi berkelanjutan.</p>
+         <section id="sec-insight" class="hidden fade-in">
+    <header class="mb-8">
+        <h2 class="text-3xl font-extrabold text-slate-900 mb-2">🔍 Insight & Kesimpulan</h2>
+        <p class="text-slate-500 text-sm">Pembelajaran utama dari analisis UX Slack menggunakan Kerangka Garrett dan Data Responden.</p>
+    </header>
+    
+    <div class="insight-card p-6 rounded-xl mb-6 bg-white border border-slate-200">
+        <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+            <span class="text-indigo-600">💡</span> Key Insights (Berdasarkan Data Tim)
+        </h3>
+        <ul class="space-y-4 text-slate-700">
+            <li class="flex items-start gap-3">
+                <div class="mt-1 bg-green-100 p-1 rounded-full"><svg class="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>
+                <div>
+                    <strong>Notification Fatigue adalah masalah kritis</strong>
+                    <p class="text-xs text-slate-500">4 dari 5 responden memberikan skor maksimal (5/5), membuktikan bahwa gangguan notifikasi bukan sekadar gangguan kecil, melainkan penghambat produktivitas utama.</p>
+                </div>
+            </li>
+            <li class="flex items-start gap-3">
+                <div class="mt-1 bg-green-100 p-1 rounded-full"><svg class="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>
+                <div>
+                    <strong>Validasi Solusi "Mention Only Mode" & "AI Summary"</strong>
+                    <p class="text-xs text-slate-500">Kedua fitur ini mendapatkan skor minat tertinggi (Rata-rata 4.8/5.0) dan menjadi pilihan prioritas utama oleh mayoritas responden (Dimas, Dharma, Steffany).</p>
+                </div>
+            </li>
+            <li class="flex items-start gap-3">
+                <div class="mt-1 bg-green-100 p-1 rounded-full"><svg class="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>
+                <div>
+                    <strong>Kesenjangan Fitur DND Saat Ini</strong>
+                    <p class="text-xs text-slate-500">Rendahnya skor kepuasan fitur DND Slack saat ini (rata-rata 1.8/5.0) menunjukkan urgensi untuk implementasi fitur Mute yang lebih granular (per-channel).</p>
+                </div>
+            </li>
+            <li class="flex items-start gap-3">
+                <div class="mt-1 bg-green-100 p-1 rounded-full"><svg class="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>
+                <div>
+                    <strong>Kebutuhan Pengorganisasian Data (Action Items)</strong>
+                    <p class="text-xs text-slate-500">Responden sangat setuju bahwa pemisahan tab khusus 'Action Items' dapat mengurangi beban kognitif dalam mencari instruksi kerja yang tertimbun.</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="bg-indigo-900 p-8 rounded-2xl text-white shadow-xl relative overflow-hidden">
+        <div class="relative z-10">
+            <h3 class="font-bold text-xl mb-4">📝 Kesimpulan Akhir</h3>
+            <p class="text-indigo-100 leading-relaxed text-sm">
+                Melalui analisis 5 lapisan Kerangka Garrett yang divalidasi dengan data responden internal, disimpulkan bahwa Slack memerlukan transformasi dari sekadar <strong>"Communication Tool"</strong> menjadi <strong>"Deep Work Partner"</strong>. 
+            </p>
+            <p class="text-indigo-100 leading-relaxed text-sm mt-3">
+                Data menunjukkan bahwa solusi <strong>Mention Only Mode</strong> dan <strong>AI Smart Summaries</strong> bukan lagi sekadar fitur tambahan, melainkan kebutuhan mendesak untuk mengatasi rata-rata skor <i>Notification Fatigue</i> yang mencapai 4.4/5.0. Implementasi solusi ini diproyeksikan mampu mengembalikan fokus kerja tim secara signifikan.
+            </p>
+            
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-white/10 p-4 rounded-xl backdrop-blur-md border border-white/20">
+                    <p class="text-xs font-bold uppercase tracking-wider text-indigo-300 mb-2">🚀 Rekomendasi Prioritas</p>
+                    <ul class="text-[11px] space-y-2">
+                        <li>1. Pengembangan "Mention Only Mode" skala Beta.</li>
+                        <li>2. Integrasi AI Summary untuk channel dengan trafik tinggi.</li>
+                    </ul>
+                </div>
+                <div class="bg-white/10 p-4 rounded-xl backdrop-blur-md border border-white/20">
+                    <p class="text-xs font-bold uppercase tracking-wider text-indigo-300 mb-2">📈 Langkah Strategis</p>
+                    <ul class="text-[11px] space-y-2">
+                        <li>1. Usability Testing prototipe kepada responden.</li>
+                        <li>2. Iterasi desain berdasarkan feedback navigasi Skeleton.</li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </div>
+        <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-indigo-500 rounded-full blur-3xl opacity-20"></div>
+    </div>
+</section>
 
         <!-- SECTION: REFLEKSI & LAPORAN KELOMPOK -->
         <section id="sec-reflection" class="hidden fade-in">
