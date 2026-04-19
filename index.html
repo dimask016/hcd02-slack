@@ -741,25 +741,93 @@
                         <li>Co-design workshop dengan 5 power users</li>
                     </ul>
                 </div>
-                <div class="bg-white p-5 rounded-xl border border-slate-200">
-                    <h3 class="font-bold text-lg mb-2">🧪 Rencana Usability Testing</h3>
-                    <ul class="list-disc list-inside text-slate-600">
-                        <li>Moderated remote testing (8 peserta)</li>
-                        <li>Tugas: aktivasi Mention Only Mode, buat aturan mute, baca digest</li>
-                        <li>Metrik: completion rate, time on task, SUS score</li>
-                    </ul>
+               <div class="mt-10 grid md:grid-cols-2 gap-8">
+    
+    <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm">
+        <h3 class="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2">
+            <span class="p-1.5 bg-amber-100 text-amber-600 rounded-lg text-xs">🧪</span>
+            Rencana Usability Testing
+        </h3>
+        <ul class="space-y-4">
+            <li class="flex gap-3">
+                <div class="text-[10px] font-bold text-slate-400">01</div>
+                <div>
+                    <p class="text-[11px] font-bold text-slate-700">Metode & Peserta</p>
+                    <p class="text-[10px] text-slate-500">Moderated Remote Testing dengan 8 peserta (Karyawan intensitas Slack tinggi).</p>
                 </div>
-                <div class="bg-white p-5 rounded-xl border border-slate-200">
-                    <h3 class="font-bold text-lg mb-2">🔄 Rencana Iterasi</h3>
-                    <div class="flex flex-wrap gap-3 justify-center">
-                        <div class="bg-indigo-100 px-4 py-2 rounded-full text-sm">1. Riset</div><span>→</span>
-                        <div class="bg-indigo-100 px-4 py-2 rounded-full text-sm">2. Desain</div><span>→</span>
-                        <div class="bg-indigo-100 px-4 py-2 rounded-full text-sm">3. Testing</div><span>→</span>
-                        <div class="bg-indigo-100 px-4 py-2 rounded-full text-sm">4. Iterasi</div>
+            </li>
+            <li class="flex gap-3">
+                <div class="text-[10px] font-bold text-slate-400">02</div>
+                <div>
+                    <p class="text-[11px] font-bold text-slate-700">Skenario Tugas (Tasks)</p>
+                    <p class="text-[10px] text-slate-500 italic">"Aktivasi Mention Only Mode, buat aturan smart mute, dan baca AI Digest harian."</p>
+                </div>
+            </li>
+            <li class="flex gap-3">
+                <div class="text-[10px] font-bold text-slate-400">03</div>
+                <div>
+                    <p class="text-[11px] font-bold text-slate-700">Metrik Keberhasilan</p>
+                    <div class="flex gap-2 mt-1">
+                        <span class="px-2 py-0.5 bg-slate-100 rounded text-[9px] text-slate-600">Completion Rate</span>
+                        <span class="px-2 py-0.5 bg-slate-100 rounded text-[9px] text-slate-600">Time on Task</span>
+                        <span class="px-2 py-0.5 bg-slate-100 rounded text-[9px] text-slate-600">SUS Score</span>
                     </div>
-                    <p class="text-sm mt-3">Target akhir: task completion &gt;85% dan SUS &gt;75.</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="bg-indigo-900 p-6 rounded-3xl text-white shadow-xl relative overflow-hidden">
+        <div class="relative z-10">
+            <h3 class="text-sm font-bold mb-6 flex items-center gap-2">
+                <span class="p-1.5 bg-white/10 rounded-lg text-xs">🔄</span>
+                Siklus Pengembangan Iteratif
+            </h3>
+            
+            <div class="flex items-center justify-between mb-8">
+                <div class="text-center">
+                    <div class="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-[10px] font-bold mx-auto mb-1 border-2 border-white/20">1</div>
+                    <p class="text-[9px] uppercase tracking-wider text-indigo-200">Riset</p>
+                </div>
+                <div class="h-px flex-1 bg-indigo-500/50 mx-2"></div>
+                <div class="text-center">
+                    <div class="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-[10px] font-bold mx-auto mb-1 border-2 border-white/20">2</div>
+                    <p class="text-[9px] uppercase tracking-wider text-indigo-200">Desain</p>
+                </div>
+                <div class="h-px flex-1 bg-indigo-500/50 mx-2"></div>
+                <div class="text-center">
+                    <div class="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-[10px] font-bold mx-auto mb-1 border-2 border-white/20">3</div>
+                    <p class="text-[9px] uppercase tracking-wider text-indigo-200">Testing</p>
+                </div>
+                <div class="h-px flex-1 bg-indigo-500/50 mx-2"></div>
+                <div class="text-center">
+                    <div class="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-[10px] font-bold mx-auto mb-1 border-2 border-white/20">4</div>
+                    <p class="text-[9px] uppercase tracking-wider text-emerald-200 font-bold">Iterasi</p>
                 </div>
             </div>
+
+            <div class="bg-white/10 p-4 rounded-2xl border border-white/10">
+                <p class="text-[10px] font-bold mb-2 text-emerald-400">Target Akhir (Success Definition):</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <p class="text-lg font-extrabold">85%+</p>
+                        <p class="text-[9px] text-indigo-200 uppercase">Task Completion</p>
+                    </div>
+                    <div>
+                        <p class="text-lg font-extrabold">75+</p>
+                        <p class="text-[9px] text-indigo-200 uppercase">SUS Score</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute -right-8 -bottom-8 w-32 h-32 bg-indigo-500/20 rounded-full blur-3xl"></div>
+    </div>
+
+</div>
+
+<div class="mt-6 p-4 bg-slate-100 rounded-xl text-center text-[10px] text-slate-500 italic">
+    📌 Seluruh rencana ini memastikan bahwa solusi final benar-benar menjawab hambatan pengguna (User Goals) secara akurat.
+</div>
 
             <!-- List Survey Pertanyaan-->
             <div class="p-6">
